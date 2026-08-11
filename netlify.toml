@@ -1,0 +1,21 @@
+# ==============================================================================
+# NETLIFY DEPLOYMENT CONFIGURATION
+# ==============================================================================
+
+[build]
+  # Static site directory (root)
+  publish = "."
+
+# Security and caching headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Enable form processing for newsletter signups
+[[plugins]]
+  package = "@netlify/plugin-emails"
+  # Optional: install if using Netlify email notifications

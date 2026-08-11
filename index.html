@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Meta Tags -->
+  <title id="meta-page-title">The Modern Learner's Blueprint | Dr. Marcus Vance</title>
+  <meta name="description" content="Transforming classroom engagement, cognitive retention, and critical inquiry in the digital age. The definitive pedagogical guide by Dr. Marcus Vance.">
+  <meta name="keywords" content="education book, pedagogy, cognitive learning, classroom engagement, active learning, teaching strategies">
+  <meta name="author" content="Dr. Marcus Vance">
+  
+  <!-- OpenGraph / Social Sharing -->
+  <meta property="og:title" content="The Modern Learner's Blueprint | Dr. Marcus Vance">
+  <meta property="og:description" content="Transforming classroom engagement and cognitive retention in the digital age.">
+  <meta property="og:type" content="book">
+  <meta property="og:image" content="assets/book-preview-card.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       STICKY NAVIGATION BAR
+       ========================================================================== -->
+  <header class="site-header" id="main-header">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo">
+        <div class="brand-icon">V</div>
+        <div>
+          <div class="brand-text" id="nav-brand-title">Dr. Marcus Vance</div>
+          <div class="brand-subtext" id="nav-brand-sub">The Modern Learner's Blueprint</div>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#problem" class="nav-link">The Challenge</a></li>
+          <li><a href="#overview" class="nav-link">About the Book</a></li>
+          <li><a href="#author" class="nav-link">Author</a></li>
+          <li><a href="#excerpt" class="nav-link">Sample Excerpt</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-primary btn-sm open-buy-modal" id="nav-buy-btn">
+          <span>Buy the Book</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION (TOP BUY CTA)
+       ========================================================================== -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Hero Copy -->
+        <div class="hero-content">
+          <div class="hero-badge-container">
+            <div class="hero-badge" id="hero-badge-text">
+              <span>🔥</span> #1 New Release in Pedagogical Science
+            </div>
+          </div>
+
+          <h1 class="hero-title" id="hero-book-title">
+            The Modern Learner's <span>Blueprint</span>
+          </h1>
+
+          <p class="hero-subtitle" id="hero-book-subtitle">
+            Transforming classroom engagement, cognitive retention, and critical inquiry in the digital age. A scientific and actionable playbook for 21st-century educators.
+          </p>
+
+          <div class="hero-cta-group">
+            <button class="btn btn-primary btn-lg open-buy-modal" id="hero-primary-buy-btn">
+              <span>Order Your Copy Today</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            </button>
+
+            <a href="#excerpt" class="btn btn-ghost btn-lg">
+              <span>Read Chapter 1 Free</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </a>
+          </div>
+
+          <!-- Formats & Pricing -->
+          <div class="hero-formats" id="hero-formats-container">
+            <div class="format-item">
+              <span class="format-label">Hardcover</span>
+              <span class="format-price" id="price-hardcover">$27.99</span>
+            </div>
+            <div class="format-item">
+              <span class="format-label">Paperback</span>
+              <span class="format-price" id="price-paperback">$19.99</span>
+            </div>
+            <div class="format-item">
+              <span class="format-label">Kindle / eBook</span>
+              <span class="format-price" id="price-ebook">$9.99</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D CSS Book Mockup -->
+        <div class="hero-book-wrapper">
+          <div class="book-glow"></div>
+          
+          <div class="book-3d open-buy-modal" title="Click to view retailers">
+            <div class="book-spine"></div>
+            <div class="book-pages"></div>
+            <div class="book-cover">
+              <div class="book-cover-top">
+                <div class="book-cover-kicker">Cognitive Pedagogy</div>
+                <div class="book-cover-title" id="cover-title-text">The Modern Learner's Blueprint</div>
+                <div class="book-cover-sub" id="cover-sub-text">Transforming Classroom Engagement</div>
+              </div>
+
+              <div class="book-cover-graphic">
+                <div class="book-circle-art">
+                  <div class="book-circle-inner">✦</div>
+                </div>
+              </div>
+
+              <div class="book-cover-author">
+                <div class="book-author-name" id="cover-author-name">Dr. Marcus Vance</div>
+                <div class="book-publisher-seal">Academic Press</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Companion Callout Pill -->
+          <div class="floating-companion-pill" id="hero-study-pill">
+            <div class="companion-icon">✓</div>
+            <div>
+              <div class="companion-text-bold">Interactive Study Companion</div>
+              <div class="companion-text-sub">Includes 4-Chapter Self-Assessment Tools</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PROBLEM STATEMENT SECTION ("The Challenge")
+       ========================================================================== -->
+  <section class="section problem-section" id="problem">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge" id="problem-badge">The Challenge</div>
+        <h2 class="section-title" id="problem-heading">Why Traditional Classrooms Are Falling Behind the Modern Mind</h2>
+        <p class="section-subtitle" id="problem-subheading">
+          Students are flooded with stimulation outside school, yet subjected to passive lecture models inside. The result? Record disengagement and cognitive fatigue.
+        </p>
+      </div>
+
+      <div class="problem-grid" id="problem-cards-container">
+        <!-- Injected via JavaScript from content.js -->
+      </div>
+
+      <!-- Prominent Quote Callout -->
+      <div class="quote-banner">
+        <p class="quote-banner-text" id="problem-quote">
+          “We do not have an attention span crisis in youth—we have a relevance crisis in our curriculum.”
+        </p>
+        <div class="quote-banner-author" id="problem-quote-author">— Dr. Marcus Vance</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       BOOK OVERVIEW & CHAPTER HIGHLIGHTS
+       ========================================================================== -->
+  <section class="section overview-section" id="overview">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge" id="overview-badge">About The Book</div>
+        <h2 class="section-title" id="overview-heading">A Scientific & Actionable Playbook for 21st-Century Learning</h2>
+      </div>
+
+      <div class="overview-grid">
+        <!-- Left: Book Summary & Takeaways -->
+        <div class="overview-text-block">
+          <div id="overview-paragraphs">
+            <!-- Injected via JS -->
+          </div>
+
+          <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-size: 1.3rem;">Core Frameworks You Will Master:</h3>
+          <ul class="takeaways-list" id="overview-takeaways">
+            <!-- Injected via JS -->
+          </ul>
+        </div>
+
+        <!-- Right: Chapter Breakdown Cards -->
+        <div class="chapters-grid" id="chapters-container">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       AUTHOR BIO & CREDENTIALS
+       ========================================================================== -->
+  <section class="section author-section" id="author">
+    <div class="container">
+      <div class="author-grid">
+        <!-- Author Portrait / Credentials Frame -->
+        <div class="author-image-wrapper">
+          <div class="author-image-frame">
+            <div class="author-avatar-fallback">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <div style="font-family: var(--font-serif); font-size: 1.35rem; color: #FFF; font-weight: 700;">Dr. Marcus Vance</div>
+              <div style="font-size: 0.85rem; color: var(--gold-400); margin-top: 0.25rem;">Cognitive Neuroscientist & Educator</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Author Biography & Stats -->
+        <div>
+          <div class="badge" id="author-badge">Meet The Author</div>
+          <h2 class="section-title" id="author-name" style="margin-bottom: 0.5rem;">Dr. Marcus Vance</h2>
+          <p style="font-size: 1.1rem; color: var(--gold-600); font-weight: 600; margin-bottom: 1.5rem;" id="author-title">
+            Cognitive Scientist, Educator & Keynote Speaker
+          </p>
+
+          <div class="author-bio-text" id="author-bio-paragraphs">
+            <!-- Injected via JS -->
+          </div>
+
+          <div class="author-stats-grid" id="author-stats-container">
+            <!-- Injected via JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SAMPLE EXCERPT & DOWNLOADABLE PDF
+       ========================================================================== -->
+  <section class="section excerpt-section" id="excerpt">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge" id="excerpt-badge" style="background: rgba(245, 158, 11, 0.15); color: var(--gold-400);">Sample Chapter Preview</div>
+        <h2 class="section-title" style="color: #FFF;" id="excerpt-heading">Experience Chapter 1: The Architecture of Attention</h2>
+        <p class="section-subtitle" style="color: var(--slate-400);">Get an immediate sneak peek into the foundational principles.</p>
+      </div>
+
+      <div class="excerpt-card">
+        <div class="excerpt-header">
+          <div class="excerpt-meta" id="excerpt-chapter-num">Chapter 1 • Excerpt</div>
+          <div class="excerpt-reading-time">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span id="excerpt-reading-time-text">5 min read</span>
+          </div>
+        </div>
+
+        <div class="excerpt-body" id="excerpt-snippet-text">
+          <!-- Injected via JS -->
+        </div>
+
+        <div class="excerpt-footer">
+          <div>
+            <div style="font-weight: 700; font-size: 1.05rem; color: #FFF;">Want to read the full chapter?</div>
+            <div style="font-size: 0.85rem; color: var(--slate-400);">Includes complete lesson frameworks and diagram models.</div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="#newsletter-section" class="btn btn-primary" id="download-sample-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Download Free Chapter 1 (PDF)</span>
+            </a>
+            <button class="btn btn-ghost open-buy-modal">Order Full Book</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       READER & PEER REVIEWS
+       ========================================================================== -->
+  <section class="section reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">Praise & Reviews</div>
+        <h2 class="section-title">Endorsed by Leading Educators & Researchers</h2>
+        <p class="section-subtitle">Read how this book is reshaping teaching practices worldwide.</p>
+      </div>
+
+      <div class="reviews-grid" id="reviews-container">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FREQUENTLY ASKED QUESTIONS (FAQ)
+       ========================================================================== -->
+  <section class="section faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">Common Inquiries</div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Everything you need to know about formats, classroom orders, and digital resources.</p>
+      </div>
+
+      <div class="faq-container" id="faq-accordion-container">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER & MAILING LIST (LEAD MAGNET)
+       ========================================================================== -->
+  <footer class="footer-lead-section" id="newsletter-section">
+    <div class="container">
+      <!-- Lead Magnet Newsletter Card -->
+      <div class="newsletter-card">
+        <div class="badge" style="background: rgba(245,158,11,0.2); color: var(--gold-400); border-color: rgba(245,158,11,0.4);" id="newsletter-incentive-badge">
+          🎁 Includes Free 18-Page Lesson Planning PDF Template
+        </div>
+        <h2 class="newsletter-title" id="newsletter-heading">Join The Educator's Weekly Dispatch</h2>
+        <p class="newsletter-sub" id="newsletter-subheading">
+          Get free chapter worksheets, classroom discussion templates, and Dr. Vance's weekly 3-minute pedagogical insight delivered every Tuesday.
+        </p>
+
+        <!-- Netlify-Ready Form -->
+        <form name="newsletter" method="POST" data-netlify="true" class="newsletter-form" id="newsletter-subscribe-form">
+          <input type="hidden" name="form-name" value="newsletter" />
+          <input 
+            type="email" 
+            name="email" 
+            id="newsletter-email-input" 
+            class="newsletter-input" 
+            placeholder="Enter your institutional or personal email..." 
+            required 
+          />
+          <button type="submit" class="btn btn-primary" id="newsletter-submit-btn">
+            <span>Subscribe Free</span>
+          </button>
+        </form>
+
+        <div class="newsletter-privacy" id="newsletter-privacy-text">Zero spam. Unsubscribe anytime in one click.</div>
+        <div class="newsletter-success" id="newsletter-success-toast"></div>
+      </div>
+
+      <!-- Footer Bottom Row -->
+      <div class="footer-bottom">
+        <div>
+          <div style="font-weight: 700; color: #FFF; font-size: 1rem; margin-bottom: 0.25rem;">Dr. Marcus Vance</div>
+          <div style="font-size: 0.8rem; color: var(--slate-400);" id="footer-copyright">
+            © 2026 Dr. Marcus Vance. All Rights Reserved.
+          </div>
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="#hero" class="footer-link">Back to Top</a></li>
+          <li><a href="#overview" class="footer-link">About Book</a></li>
+          <li><a href="#faq" class="footer-link">FAQ</a></li>
+          <li><a href="mailto:contact@marcusvanceeducation.com" class="footer-link" id="footer-contact-link">Speaking & Bulk Inquiries</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       COLLAPSIBLE INTERACTIVE EXERCISE SIDEBAR / COMPANION DRAWER
+       ========================================================================== -->
+  <!-- Floating Trigger Button -->
+  <button class="exercise-sidebar-trigger" id="toggle-exercise-drawer-btn" aria-label="Toggle Interactive Study Companion">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    <span>Chapter Exercises</span>
+    <span class="trigger-badge" id="exercise-chapter-count">4 Ch.</span>
+  </button>
+
+  <!-- Drawer Backdrop -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+  <!-- The Sliding Drawer -->
+  <aside class="exercise-drawer" id="exercise-drawer" aria-label="Study Companion Drawer">
+    <div class="drawer-header">
+      <div class="drawer-title-group">
+        <h3 id="drawer-title">Interactive Study Companion</h3>
+        <p id="drawer-subtitle">Reflect, Assess & Test Your Understanding</p>
+      </div>
+      <button class="drawer-close-btn" id="close-drawer-btn" aria-label="Close Companion Drawer">&times;</button>
+    </div>
+
+    <!-- Chapter Selector Tabs -->
+    <div class="drawer-tabs" id="drawer-chapter-tabs">
+      <!-- Injected via JS -->
+    </div>
+
+    <!-- Active Chapter Content Area -->
+    <div class="drawer-content" id="drawer-active-content">
+      <!-- Injected dynamically based on selected chapter -->
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       BUY RETAILERS MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="buy-modal-overlay">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="close-buy-modal">&times;</button>
+      <div class="badge" style="margin-bottom: 0.5rem;">Purchase Options</div>
+      <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--navy-900);">Order "The Modern Learner's Blueprint"</h3>
+      <p style="font-size: 0.9rem; color: var(--slate-500); margin-top: 0.35rem;">
+        Choose your preferred retailer or order a direct signed copy:
+      </p>
+
+      <div class="retailers-grid" id="retailers-modal-grid">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
