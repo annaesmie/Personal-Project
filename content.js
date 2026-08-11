@@ -151,7 +151,7 @@ const BOOK_CONFIG = {
     title: "Cognitive Scientist, Educator & Keynote Speaker",
     bio: [
       "Dr. Marcus Vance has spent over two decades researching the intersection of cognitive neuroscience, learning psychology, and classroom instructional design.",
-      "Formerly the Director of Pedagogical Innovation at the Global Learning Institute, he has advised over 150 school districts, universities, and EdTech pioneers worldwide. His research has been featured in the <em>Journal of Educational Psychology</em>, <em>Harvard Ed Magazine</em>, and <em>Wired</em>."
+      "Formerly the Director of Pedagogical Innovation at the Global Learning Institute, he has advised over 150 school districts, universities, and EdTech pioneers worldwide. His research has been featured in the <em>Journal of Educational Psychology</em>, <em>Harvard Ed Magazine</em>, and <em>Wired</em>.",
     ],
     credentials: [
       { label: "Classrooms Impacted", value: "25,000+" },
