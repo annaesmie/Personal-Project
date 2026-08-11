@@ -157,7 +157,7 @@ const BOOK_CONFIG = {
       { label: "Classrooms Impacted", value: "25,000+" },
       { label: "Research Citations", value: "3,400+" },
       { label: "Keynote Speeches", value: "120+ Global Events" },
-      { label: "Years in Pedagogy", value: "22 Years" }
+      { label: "Years in Pedagogy", value: "22 Years" },
     ],
     photo: "assets/author-portrait.jpg"
   },
