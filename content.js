@@ -17,9 +17,9 @@ const BOOK_CONFIG = {
   // 1. GOOGLE SHEETS / SHEETDB INTEGRATION
   // ---------------------------------------------------------------------------------------
   integration: {
-    useGoogleSheets: false, // Set to true to load dynamic content from Google Sheets
-    sheetDbUrl: "https://sheetdb.io/api/v1/YOUR_SHEETDB_API_ID_HERE", // Your SheetDB endpoint
-    cacheTimeoutMinutes: 10 // How long to cache sheet data locally in minutes
+    useGoogleSheets: true, // Turn this to true
+    sheetDbUrl: "https://sheetdb.io/api/v1/ya8pcf7ekg96u", // Paste your SheetDB link here
+    cacheTimeoutMinutes: 0
   },
 
   // ---------------------------------------------------------------------------------------
