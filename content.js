@@ -17,31 +17,31 @@ const BOOK_CONFIG = {
   // 1. GOOGLE SHEETS / SHEETDB INTEGRATION
   // ---------------------------------------------------------------------------------------
   integration: {
-    useGoogleSheets: true, // Turn this to true
-    sheetDbUrl: "https://sheetdb.io/api/v1/ya8pcf7ekg96u", // Paste your SheetDB link here
-    cacheTimeoutMinutes: 0
+    useGoogleSheets: true, // Set to true to load dynamic content from Google Sheets
+    sheetDbUrl: "https://sheetdb.io/api/v1/ya8pcf7ekg96u", // Your live SheetDB endpoint
+    cacheTimeoutMinutes: 0 // Fetch live on every reload
   },
 
   // ---------------------------------------------------------------------------------------
-  // 2. BRANDING & GENERAL SETTINGS
+  // 2. BRANDING & GENERAL SETTINGS (Fallbacks if not overridden in Sheet)
   // ---------------------------------------------------------------------------------------
   site: {
-    siteTitle: "The Modern Learner's Blueprint | Dr. Marcus Vance",
-    badgeText: "🔥 #1 New Release in Pedagogical Science",
-    tagline: "Empowering Educators & Inspiring Lifelong Mastery",
+    siteTitle: "Autism: A Modern Educator's Guide | Tamara Brown",
+    badgeText: "🏆 Winner of the 2026 Award",
+    tagline: "Empowering Inclusive Classrooms Everywhere",
     copyrightYear: 2026,
-    contactEmail: "contact@marcusvanceeducation.com",
-    pressEmail: "press@marcusvanceeducation.com"
+    contactEmail: "hello@tamarabrowneducation.com",
+    pressEmail: "press@tamarabrowneducation.com"
   },
 
   // ---------------------------------------------------------------------------------------
   // 3. BOOK DETAILS & PURCHASE INFORMATION
   // ---------------------------------------------------------------------------------------
   book: {
-    title: "The Modern Learner's Blueprint",
-    subtitle: "Transforming Classroom Engagement, Cognitive Retention & Critical Inquiry in the Digital Age",
+    title: "Autism Book",
+    subtitle: "Practical Strategies for Neurodiverse Learning & Cognitive Growth",
     tag: "Hardcover • Paperback • eBook • Audiobook",
-    coverImage: "assets/book-cover.png", // Path to book cover or let CSS render 3D cover
+    coverImage: "assets/book-cover.png",
     pricing: {
       hardcover: "$27.99",
       paperback: "$19.99",
@@ -80,26 +80,26 @@ const BOOK_CONFIG = {
   // ---------------------------------------------------------------------------------------
   problemStatement: {
     badge: "The Challenge",
-    heading: "Why Traditional Classrooms Are Falling Behind the Modern Mind",
-    subheading: "Students are flooded with stimulation outside school, yet subjected to passive lecture models inside. The result? Record disengagement and cognitive fatigue.",
+    heading: "Bridging the Gap in Neurodiverse Classrooms",
+    subheading: "Traditional curricula often miss the unique strengths of neurodiverse learners.",
     pillars: [
       {
         icon: "⚡",
-        title: "The Attention Fragmentation Crisis",
-        description: "Modern learners switch tasks every 47 seconds. Traditional monologue teaching fails to hold cognitive bandwidth."
+        title: "Sensory & Cognitive Load",
+        description: "Standard classroom environments can trigger sensory overload, impacting cognitive processing and student engagement."
       },
       {
         icon: "🧩",
-        title: "Passive Ingestion vs. Active Construction",
-        description: "Rote memorization yields less than 20% 30-day retention. Learners need exploratory frameworks, not passive slides."
+        title: "Rigid Learning Frameworks",
+        description: "One-size-fits-all instruction overlooks dynamic strengths in pattern recognition, deep focus, and specialized inquiry."
       },
       {
         icon: "🎯",
-        title: "The Transfer Dilemma",
-        description: "Students ace standardized tests yet struggle to apply conceptual reasoning in novel, real-world contexts."
+        title: "The Inclusion Gap",
+        description: "Educators need actionable, strength-based scaffolds rather than deficit-focused compliance models."
       }
     ],
-    quote: "“We do not have an attention span crisis in youth—we have a relevance crisis in our curriculum.”"
+    quote: "“Inclusion is not a checklist; it is an environment where every learner thrives.”"
   },
 
   // ---------------------------------------------------------------------------------------
@@ -107,37 +107,37 @@ const BOOK_CONFIG = {
   // ---------------------------------------------------------------------------------------
   bookBlurb: {
     badge: "About The Book",
-    heading: "A Scientific & Actionable Playbook for 21st-Century Learning",
+    heading: "A Compassionate & Actionable Guide for Inclusive Classrooms",
     descriptionParagraphs: [
-      "In <em>The Modern Learner's Blueprint</em>, renowned cognitive researcher and educator Dr. Marcus Vance bridges cutting-edge neuroscience with practical, battle-tested classroom methods.",
-      "Whether you teach elementary students, lecture in higher education, or lead instructional design, this guide unpacks actionable systems to spark relentless curiosity, deepen comprehension, and build metacognitive autonomy."
+      "In <em>Autism: Practical Strategies for Neurodiverse Learning & Cognitive Growth</em>, specialist and author Tamara Brown bridges cognitive research with practical, real-world classroom methods.",
+      "Whether you teach elementary students, lecture in higher education, or design instructional accommodations, this guide unpacks actionable systems to cultivate belonging, deepen comprehension, and empower every learner."
     ],
     keyTakeaways: [
-      "The 4-stage Cognitive Arc: Hook, Explore, Consolidate, Transfer",
-      "How to design low-stakes micro-challenges that trigger dopamine-driven focus",
-      "Scaffolding self-regulated learning so students take ownership of inquiry",
-      "Frameworks for balancing digital tools with deep, deliberate reading"
+      "Strength-based scaffolding models for neurodiverse learners",
+      "Strategies for regulating sensory environments and reducing cognitive fatigue",
+      "Designing individualized communication channels and flexible pacing",
+      "Practical collaboration frameworks for teachers, parents, and specialists"
     ],
     chapters: [
       {
         number: "01",
-        title: "Rewiring the Learning Loop",
-        summary: "Why passive listening fails and how dopamine-gated attention triggers true retention."
+        title: "Understanding Neurodiversity",
+        summary: "Moving beyond deficit models to embrace authentic neurodiverse strengths."
       },
       {
         number: "02",
-        title: "The Metacognitive Shift",
-        summary: "Teaching students how they think, diagnosing blind spots, and self-directed mastery."
+        title: "Sensory & Environmental Design",
+        summary: "Crafting calming, predictable classroom spaces that foster focus."
       },
       {
         number: "03",
-        title: "Designing Friction & Desirable Difficulty",
-        summary: "Why productive struggle creates lasting neural connections and how to scaffold it."
+        title: "Executive Function & Scaffolding",
+        summary: "Visual structures, routine maps, and self-regulation toolkits."
       },
       {
         number: "04",
-        title: "Transfer & Real-World Application",
-        summary: "Moving beyond rote recall to synthetic problem-solving across disciplines."
+        title: "Fostering Social Belonging & Advocacy",
+        summary: "Building empathetic peer cultures and supporting student self-advocacy."
       }
     ]
   },
@@ -147,60 +147,58 @@ const BOOK_CONFIG = {
   // ---------------------------------------------------------------------------------------
   author: {
     badge: "Meet The Author",
-    name: "Dr. Marcus Vance",
-    title: "Cognitive Scientist, Educator & Keynote Speaker",
+    name: "Tamara Brown",
+    title: "Specialist in Neurodiverse Education & Author",
     bio: [
-      ["Dr. Marcus Vance has spent over two decades researching the intersection of cognitive neuroscience, learning psychology, and classroom instructional design."],
-      ["Formerly the Director of Pedagogical Innovation at the Global Learning Institute, he has advised over 150 school districts, universities, and EdTech pioneers worldwide. His research has been featured in the <em>Journal of Educational Psychology</em>, <em>Harvard Ed Magazine</em>, and <em>Wired</em>.",
-    ],],
+      "Tamara Brown is an educator, speaker, and neurodiversity specialist dedicated to transforming inclusive classroom practices.",
+      "With years of hands-on experience coaching teachers and supporting neurodivergent students, her work centers on practical, dignity-first instructional adaptations."
+    ],
     credentials: [
-      { label: "Classrooms Impacted", value: "25,000+" },
-      { label: "Research Citations", value: "3,400+" },
-      { label: "Keynote Speeches", value: "120+ Global Events" },
-      { label: "Years in Pedagogy", value: "22 Years" },
+      { value: "1,200+", label: "Educators Trained" },
+      { value: "15+", label: "Years Experience" },
+      { value: "85+", label: "Keynotes & Workshops" },
+      { value: "4.9/5", label: "Educator Rating" }
     ],
     photo: "assets/author-portrait.jpg"
   },
 
   // ---------------------------------------------------------------------------------------
-  // 7. SAMPLE EXCERPT & DOWNLOADABLE PDF
+  // 7. SAMPLE EXCERPT / CHAPTER PREVIEW
   // ---------------------------------------------------------------------------------------
   sampleExcerpt: {
-    badge: "Sample Chapter Preview",
-    heading: "Experience Chapter 1: The Architecture of Attention",
-    readingTime: "5 min read",
-    chapterNumber: "Chapter 1 • Excerpt",
-    snippetText: `“Consider the last time a student truly lost track of time in your classroom. It was not during a presentation of neatly formatted bullet points. It happened when they were confronted with an authentic puzzle—a tension between what they expected and what actually occurred.
-
-Curiosity is not a personality trait; it is a neurochemical response to an information gap. When we present answers before students have felt the itch of the question, we rob the brain of its natural engine for retention...”`,
+    badge: "Free Preview",
+    heading: "Experience Chapter 1: Understanding Neurodiversity",
+    chapterNumber: "01",
+    readingTime: "4 min read",
+    snippetText: "“When we shift from trying to 'fix' attention to designing for authentic strengths, classrooms transform. Neurodiversity is not an obstacle to curriculum delivery; it is an invitation to elevate the precision and empathy of our teaching.”",
     pdfDownloadUrl: "#sample-pdf-download",
-    pdfFilename: "Modern_Learners_Blueprint_Sample_Chapter1.pdf"
+    pdfFilename: "Autism_Sample_Chapter1.pdf"
   },
 
   // ---------------------------------------------------------------------------------------
-  // 8. REVIEWS & ENDORSEMENTS
+  // 8. SOCIAL PROOF & REVIEWS
   // ---------------------------------------------------------------------------------------
   reviews: [
     {
       stars: 5,
-      quote: "The single most transformative book on teaching I have read in a decade. Every school district should put this in their new-teacher welcome kit.",
-      author: "Dr. Elena Rostova",
-      role: "Dean of Education, Pacific Northwest University",
-      organization: "PNU School of Education"
+      quote: "This book changed the way I structure my entire school day. A compassionate, practical masterpiece for every modern teacher.",
+      author: "Sarah Jenkins",
+      role: "Lead Instructional Coach",
+      organization: "Metro Public Schools"
     },
     {
       stars: 5,
-      quote: "Marcus Vance has done the impossible: translated complex cognitive science into five-minute classroom routines that actually double student participation.",
-      author: "Terrence Wright",
-      role: "2024 National Teacher of the Year Finalist",
-      organization: "Oakridge High School"
+      quote: "Finally, a guide that balances neurodevelopmental science with actual, implementable classroom routines.",
+      author: "David Ross, Ed.D.",
+      role: "Director of Special Education",
+      organization: "Lincoln Academy"
     },
     {
       stars: 5,
-      quote: "A masterclass in modern pedagogy. The chapter on 'Desirable Difficulty' completely altered how our department designs exams.",
-      author: "Prof. Sarah Chen-Adams",
-      role: "Department Chair of Cognitive Studies",
-      organization: "Midwest Institute of Technology"
+      quote: "Essential reading for pre-service and veteran educators alike. Clear, respectful, and empowering.",
+      author: "Elena Rostova",
+      role: "Department Chair",
+      organization: "Center for Inclusive Pedagogy"
     }
   ],
 
@@ -209,200 +207,198 @@ Curiosity is not a personality trait; it is a neurochemical response to an infor
   // ---------------------------------------------------------------------------------------
   faqs: [
     {
-      question: "Is this book suitable for K-12 teachers as well as university professors?",
-      answer: "Yes! The core principles of cognitive retention and curiosity architecture apply across all age groups. Each chapter includes explicit 'K-12 Application Notes' alongside 'Higher Education & Corporate Learning' adaptations."
+      question: "Is this book suitable for general education teachers?",
+      answer: "Yes! While it covers neurodiverse learning, every framework is designed for general education teachers to implement immediately in mixed-ability classrooms."
     },
     {
-      question: "Are bulk discounts available for schools, districts, and book clubs?",
-      answer: "Absolutely. We offer 30% to 50% discounts on orders of 15 copies or more, along with complimentary bulk digital companion worksheets. Contact bulk@marcusvanceeducation.com for an invoice."
+      question: "Do you offer bulk discounts for school districts or departments?",
+      answer: "Yes. For orders of 10 or more copies, contact our outreach team via the contact link below for educational licensing and district pricing."
     },
     {
-      question: "Is there an audiobook version available?",
-      answer: "Yes, the audiobook is narrated directly by Dr. Marcus Vance and includes downloadable PDF companion graphs. Available on Audible, Apple Books, and Spotify Audiobooks."
+      question: "Are printable classroom worksheets included?",
+      answer: "Yes, readers get full access to the downloadable digital companion kit containing graphic organizers, sensory audits, and lesson adaptation templates."
     },
     {
-      question: "How do I access the interactive companion worksheets?",
-      answer: "You can use the built-in 'Chapter Exercises' sidebar on this website or download printable PDF worksheets directly using the download links in each chapter module."
+      question: "Can I book Tamara Brown for professional development or keynotes?",
+      answer: "Absolutely. Send an inquiry through the contact email in the footer with your proposed dates and school district details."
     }
   ],
 
   // ---------------------------------------------------------------------------------------
-  // 10. MAILING LIST / NEWSLETTER (LEAD MAGNET)
+  // 10. LEAD CAPTURE / NEWSLETTER
   // ---------------------------------------------------------------------------------------
   newsletter: {
-    heading: "Join The Educator's Weekly Dispatch",
-    subheading: "Get free chapter worksheets, classroom discussion templates, and Dr. Vance's weekly 3-minute pedagogical insight delivered every Tuesday.",
-    incentiveBadge: "🎁 Includes Free 18-Page Lesson Planning PDF Template",
-    inputPlaceholder: "Enter your institutional or personal email...",
-    buttonText: "Get Free Toolkit & Subscribe",
-    successMessage: "🎉 You're in! Check your inbox for your 18-page toolkit and welcome guide.",
-    privacyNote: "Zero spam. Unsubscribe anytime in one click."
+    heading: "Join the Inclusive Educators Dispatch",
+    subheading: "Get weekly lesson plans, discussion templates, and teaching insights.",
+    incentiveBadge: "🎁 Includes Free Classroom Adaptation Toolkit",
+    inputPlaceholder: "Enter your educator email address...",
+    buttonText: "Subscribe Free",
+    privacyNote: "🔒 No spam, ever. Unsubscribe with 1-click anytime.",
+    successMessage: "🎉 You're in! Check your inbox for your free toolkit."
   },
 
   // ---------------------------------------------------------------------------------------
-  // 11. CHAPTER EXERCISES & INTERACTIVE COMPANION (SIDEBAR)
+  // 11. INTERACTIVE STUDY COMPANION (DRAWER)
   // ---------------------------------------------------------------------------------------
   exercisesSidebar: {
-    title: "Interactive Study Companion",
-    subtitle: "Reflect, Assess & Test Your Understanding",
     chapters: [
       {
         id: "ch1",
         chapterNumber: "Chapter 1",
-        title: "The Architecture of Attention",
-        reflectionPrompt: "Identify one lesson in your curriculum where students routinely disengage. What 'information gap' could you introduce in the first 3 minutes?",
-        reflectionPlaceholder: "Type your notes and action plan here (automatically saved)...",
+        title: "Understanding Neurodiversity",
+        reflectionPrompt: "Identify one lesson plan from this week. How can you redesign it to leverage diverse student processing styles?",
+        reflectionPlaceholder: "Draft your lesson adaptation reflection here...",
         checklist: [
-          "I have mapped out the initial 'Curiosity Gap' for my next unit.",
-          "I replaced at least one 15-minute lecture block with an exploratory prompt.",
-          "I measured student response time during the opening problem."
+          "I audited my lesson for multi-modal presentation options (visual, auditory, kinesthetic).",
+          "I created clear visual agendas for classroom transitions.",
+          "I offered choice in how students demonstrate concept mastery."
         ],
         quiz: [
           {
-            question: "According to cognitive science, what neurochemical driver is triggered by an information gap?",
+            question: "What is the core principle of neurodiversity-affirming education?",
             options: [
-              "Cortisol",
-              "Dopamine",
-              "Melatonin",
-              "Oxytocin"
+              "Standardizing all assessments to one format",
+              "Recognizing neurological differences as natural human variations with unique strengths",
+              "Separating all students by learning speed",
+              "Relying exclusively on lecture-based teaching"
             ],
             correctIndex: 1,
-            explanation: "Information gaps trigger anticipatory dopamine release, which sharpens focus and primes neural pathways for memory consolidation."
+            explanation: "Neurodiversity-affirming teaching values differences as natural variations and creates environments where all processing styles thrive."
           },
           {
-            question: "What is the primary risk of presenting answers before questions in a lesson?",
+            question: "How can visual schedules support executive functioning?",
             options: [
-              "Students write down too many notes",
-              "The brain perceives the concept as low-priority and fails to encode it deeply",
-              "It increases the time required to grade homework",
-              "It causes over-stimulation in the visual cortex"
+              "They increase test scores automatically without teacher input",
+              "They reduce cognitive anxiety by providing predictable task sequencing",
+              "They replace the need for lesson plans",
+              "They are only useful for younger elementary students"
             ],
             correctIndex: 1,
-            explanation: "Without an authentic problem to resolve, the brain classifies the information as redundant, resulting in rapid forgetting."
+            explanation: "Visual schedules lower executive function demand by making upcoming transitions and expectations clear and predictable."
           }
         ],
         worksheetUrl: "#download-ch1-worksheet",
-        worksheetLabel: "Download Ch. 1 Action Plan (PDF)"
+        worksheetLabel: "Download Ch. 1 Reflection Guide (PDF)"
       },
       {
         id: "ch2",
         chapterNumber: "Chapter 2",
-        title: "The Metacognitive Shift",
-        reflectionPrompt: "How do your current assessment methods allow students to evaluate their own thinking before receiving a score?",
-        reflectionPlaceholder: "Write down your metacognitive reflection strategies here...",
+        title: "Sensory & Environmental Design",
+        reflectionPrompt: "Conduct a 5-minute sensory audit of your classroom space. What ambient noise or lighting changes can you make today?",
+        reflectionPlaceholder: "Write down 2 physical environment adjustments...",
         checklist: [
-          "I have introduced a 2-minute 'Confidence Calibration' rubric before quizzes.",
-          "Students analyze their own error patterns on returned assignments.",
-          "I taught students how to formulate their own diagnostic questions."
+          "I established a quiet regulation corner with sensory tools.",
+          "I dimmed harsh overhead fluorescent lighting where possible.",
+          "I provided alternative seating options for active focus."
         ],
         quiz: [
           {
-            question: "What does 'Metacognition' mean in an active learning environment?",
+            question: "What is sensory overload in a learning environment?",
             options: [
-              "Memorizing large quantities of factual data",
-              "Thinking about one's own thinking and regulating comprehension",
-              "Taking notes at a rapid pace during lectures",
-              "Using digital flashcards exclusively"
+              "When a student is bored by repetitive material",
+              "When sensory inputs exceed the nervous system's ability to process and regulate",
+              "When classroom technology stops working",
+              "When an assignment has too many words"
             ],
             correctIndex: 1,
-            explanation: "Metacognition is the awareness and deliberate regulation of one's own learning processes and cognitive strategies."
+            explanation: "Sensory overload occurs when environmental stimuli overwhelm the nervous system, impairing focus and emotional regulation."
           },
           {
-            question: "Which of the following is a classic metacognitive prompt?",
+            question: "What is a practical way to offer sensory regulation in class?",
             options: [
-              "'What year did this event occur?'",
-              "'How confident are you in this answer, and why?'",
-              "'Copy definition #4 from page 20.'",
-              "'List all five steps in order.'"
+              "Designating a calm, low-stimulation break zone with clear guidelines",
+              "Eliminating all classroom visuals and posters",
+              "Requiring students to stay in one seat for the entire day",
+              "Playing loud music during silent reading"
             ],
-            correctIndex: 1,
-            explanation: "Confidence calibration prompts require students to evaluate the strength of their reasoning, not just recall a fact."
+            correctIndex: 0,
+            explanation: "A designated calm corner allows students to self-regulate proactively before stress escalates."
           }
         ],
         worksheetUrl: "#download-ch2-worksheet",
-        worksheetLabel: "Download Ch. 2 Metacognition Log (PDF)"
+        worksheetLabel: "Download Ch. 2 Sensory Audit Matrix (PDF)"
       },
       {
         id: "ch3",
         chapterNumber: "Chapter 3",
-        title: "Desirable Difficulty & Friction",
-        reflectionPrompt: "Where are you making things 'too easy' for students in a way that creates an illusion of mastery without true retention?",
-        reflectionPlaceholder: "Note areas where productive struggle can be introduced safely...",
+        title: "Executive Function & Scaffolding",
+        reflectionPrompt: "Choose a multi-step project you assign. How can you break it down into explicit visual micro-deadlines?",
+        reflectionPlaceholder: "Outline your project scaffolding steps here...",
         checklist: [
-          "I spaced practice sessions across 3 different class days.",
-          "I interleaved two different problem types in the same homework set.",
-          "I normalized failure as essential data during problem-solving."
+          "I created step-by-step checklists for multi-part assignments.",
+          "I taught explicit time-estimation techniques before work periods.",
+          "I provided exemplar models for completed projects."
         ],
         quiz: [
           {
-            question: "Who coined the term 'Desirable Difficulties' in learning psychology?",
+            question: "Why is chunking assignments helpful for executive function support?",
             options: [
-              "Robert & Elizabeth Bjork",
-              "Jean Piaget",
-              "B.F. Skinner",
-              "Lev Vygotsky"
-            ],
-            correctIndex: 0,
-            explanation: "Robert and Elizabeth Bjork pioneered research on how deliberate friction (spacing, retrieval, interleaving) boosts long-term recall."
-          },
-          {
-            question: "What happens when practice is 'blocked' (e.g., repeating the same problem type 20 times)?",
-            options: [
-              "Long-term retention reaches 99%",
-              "It creates an 'illusion of competence' with rapid forgetting later",
-              "Students develop cognitive fatigue immediately",
-              "It prevents transfer of skills completely"
+              "It makes grading take longer",
+              "It prevents cognitive overwhelm and establishes achievable milestones",
+              "It eliminates the need for deadlines",
+              "It reduces the total amount of content learned"
             ],
             correctIndex: 1,
-            explanation: "Blocked practice feels easy in the moment but results in shallow storage compared to interleaved, spaced practice."
+            explanation: "Chunking breaks large, intimidating projects into manageable steps, supporting working memory and planning."
+          },
+          {
+            question: "What role do visual timers play in classroom pacing?",
+            options: [
+              "They cause unnecessary stress for all students",
+              "They make the passage of time concrete and visual",
+              "They should only be used during final exams",
+              "They replace verbal instructions entirely"
+            ],
+            correctIndex: 1,
+            explanation: "Visual timers make abstract time tangible, helping students pace themselves and transition smoothly."
           }
         ],
         worksheetUrl: "#download-ch3-worksheet",
-        worksheetLabel: "Download Ch. 3 Friction Matrix (PDF)"
+        worksheetLabel: "Download Ch. 3 Scaffolding Guide (PDF)"
       },
       {
         id: "ch4",
         chapterNumber: "Chapter 4",
-        title: "Transfer & Real-World Synthesis",
-        reflectionPrompt: "Design a cross-disciplinary challenge that asks students to apply this week's concept to an unfamiliar real-world scenario.",
-        reflectionPlaceholder: "Draft your transfer project prompt here...",
+        title: "Fostering Social Belonging & Advocacy",
+        reflectionPrompt: "How do you currently invite students to share how they learn best? Draft a quick beginning-of-term self-advocacy prompt.",
+        reflectionPlaceholder: "Draft your student self-advocacy check-in...",
         checklist: [
-          "I connected this week's lesson to an active current event or community challenge.",
-          "Students compared solutions across at least two different domains.",
-          "Students presented their findings to an audience outside the classroom."
+          "I created a private channel for students to request accommodations.",
+          "I facilitated classroom discussions on respecting neurodivergent peers.",
+          "I coached students on framing their learning strengths and needs."
         ],
         quiz: [
           {
-            question: "What is 'Far Transfer' in learning science?",
+            question: "What is student self-advocacy in education?",
             options: [
-              "Transferring a student to another classroom",
-              "Applying a learned concept to a novel context that appears surface-different",
-              "Translating a textbook from English to Spanish",
-              "Moving digital files between computers"
+              "Students grading their own standardized tests",
+              "Students understanding their learning needs and communicating them effectively",
+              "Students choosing never to do group assignments",
+              "Students writing their own school policies"
             ],
             correctIndex: 1,
-            explanation: "Far Transfer is the holy grail of education: using underlying principles to solve problems in completely different domains."
+            explanation: "Self-advocacy empowers students to understand their unique needs, strengths, and necessary supports."
           },
           {
-            question: "What is the best way to encourage conceptual transfer?",
+            question: "How can educators foster inclusive peer cultures?",
             options: [
-              "Drilling identical multiple-choice questions repeatedly",
-              "Teaching the deep structural analogy across varied real-world examples",
-              "Shortening the school year",
-              "Eliminating homework entirely"
+              "By ignoring differences and treating everyone identically",
+              "By modeling empathy and celebrating diverse problem-solving approaches",
+              "By creating competitive classroom rankings",
+              "By eliminating all group projects"
             ],
             correctIndex: 1,
-            explanation: "Exploring deep analogical structures across multiple contexts helps the brain extract the underlying generalized principle."
+            explanation: "Modeling empathy and valuing diverse perspectives creates a classroom culture of psychological safety."
           }
         ],
         worksheetUrl: "#download-ch4-worksheet",
-        worksheetLabel: "Download Ch. 4 Transfer Rubric (PDF)"
+        worksheetLabel: "Download Ch. 4 Advocacy Rubric (PDF)"
       }
     ]
   }
 };
 
-// Export configuration so it can be loaded both via browser <script> tag and Node/ES modules
+// Export configuration
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = BOOK_CONFIG;
 }
