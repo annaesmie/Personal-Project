@@ -41,7 +41,7 @@ const BOOK_CONFIG = {
     title: "Autism Book",
     subtitle: "Practical Strategies for Neurodiverse Learning & Cognitive Growth",
     tag: "Hardcover • Paperback • eBook • Audiobook",
-    coverImage: "assets/book-cover.png",
+    coverImage: "https://m.media-amazon.com/images/I/61Wda4havWL._SL1293_.jpg",
     pricing: {
       hardcover: "$27.99",
       paperback: "$19.99",
