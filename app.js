@@ -668,71 +668,97 @@ function initHeroBookCarousel(data) {
     const currentBook = books[activeIndex];
     if (!currentBook) return;
 
-    // 1. Update Title & Subtitle
-    const heroTitle = document.getElementById('hero-book-title');
-    if (heroTitle) {
-      if (currentBook.title.includes(':')) {
-        const parts = currentBook.title.split(':');
-        heroTitle.innerHTML = `${parts[0]}: <span>${parts[1]}</span>`;
-      } else {
-        const parts = currentBook.title.split(' ');
-        const lastWord = parts.pop();
-        heroTitle.innerHTML = `${parts.join(' ')} <span>${lastWord}</span>`;
-      }
+    const book3d = document.getElementById('hero-book-3d');
+    if (book3d) {
+      book3d.style.opacity = '0.7';
+      book3d.style.transform = 'rotateY(-10deg) scale(0.96)';
     }
 
-    const heroSub = document.getElementById('hero-book-subtitle');
-    if (heroSub) heroSub.textContent = currentBook.subtitle;
-
-    const heroBadge = document.getElementById('hero-badge-text');
-    if (heroBadge && currentBook.badgeText) {
-      heroBadge.innerHTML = `${currentBook.badgeText}`;
-    }
-
-    const pricePaperback = document.getElementById('price-paperback');
-    if (pricePaperback && currentBook.pricing) pricePaperback.textContent = currentBook.pricing.paperback || '$19.99';
-
-    const priceEbook = document.getElementById('price-ebook');
-    if (priceEbook && currentBook.pricing) priceEbook.textContent = currentBook.pricing.ebook || '$9.99';
-
-    // 2. Update 3D Cover Image with Automatic Netlify/CDN Fallback
-    const coverImg = document.getElementById('book-cover-img');
-    const coverContainer = document.getElementById('book-cover-container');
-    if (coverImg) {
-      coverImg.referrerPolicy = 'no-referrer';
-      coverImg.alt = currentBook.title;
-      coverImg.style.display = 'block';
-      if (coverContainer) coverContainer.classList.add('has-image');
-
-      coverImg.onerror = function() {
-        // If local asset path fails on Netlify, fallback directly to Amazon CDN image
-        if (currentBook.id === 'autism-book') {
-          coverImg.src = 'https://m.media-amazon.com/images/I/61Wda4havWL._SL1293_.jpg';
-        } else if (currentBook.id === 'classroom-strategies-book') {
-          coverImg.src = 'https://m.media-amazon.com/images/I/61cxDj2WDzL._SL1500_.jpg';
+    setTimeout(() => {
+      // 1. Update Hero Title & Subtitle
+      const heroTitle = document.getElementById('hero-book-title');
+      if (heroTitle) {
+        if (currentBook.title.includes(':')) {
+          const parts = currentBook.title.split(':');
+          heroTitle.innerHTML = `${parts[0]}: <span>${parts[1]}</span>`;
+        } else {
+          const parts = currentBook.title.split(' ');
+          const lastWord = parts.pop();
+          heroTitle.innerHTML = `${parts.join(' ')} <span>${lastWord}</span>`;
         }
-      };
+      }
 
-      coverImg.src = currentBook.coverImage;
-    }
+      const heroSub = document.getElementById('hero-book-subtitle');
+      if (heroSub) heroSub.textContent = currentBook.subtitle;
 
-    // 3. Update Amazon Link
-    const primaryBuyBtn = document.getElementById('hero-primary-buy-btn');
-    if (primaryBuyBtn && currentBook.amazonUrl) {
-      primaryBuyBtn.href = currentBook.amazonUrl;
-    }
+      const heroBadge = document.getElementById('hero-badge-text');
+      if (heroBadge && currentBook.badgeText) {
+        heroBadge.innerHTML = `${currentBook.badgeText}`;
+      }
 
-    const book3dLink = document.getElementById('hero-book-3d-link');
-    if (book3dLink && currentBook.amazonUrl) {
-      book3dLink.href = currentBook.amazonUrl;
-    }
+      const pricePaperback = document.getElementById('price-paperback');
+      if (pricePaperback && currentBook.pricing) pricePaperback.textContent = currentBook.pricing.paperback || '$19.99';
 
-    // 4. Update Dots
-    if (dotsContainer) {
-      dotsContainer.querySelectorAll('.hero-carousel-dot').forEach((dot, idx) => {
-        dot.classList.toggle('active', idx === activeIndex);
-      });
-    }
+      const priceEbook = document.getElementById('price-ebook');
+      if (priceEbook && currentBook.pricing) priceEbook.textContent = currentBook.pricing.ebook || '$9.99';
+
+      // 2. Update Fallback CSS Cover Text
+      const coverTitle = document.getElementById('cover-title-text');
+      const coverSub = document.getElementById('cover-sub-text');
+      const coverAuthor = document.getElementById('cover-author-name');
+      if (coverTitle) {
+        coverTitle.textContent = currentBook.title.includes(':') ? currentBook.title.split(':')[0] : currentBook.title;
+      }
+      if (coverSub) {
+        coverSub.textContent = currentBook.title.includes(':') ? currentBook.title.split(':')[1].trim() : currentBook.subtitle;
+      }
+      if (coverAuthor) {
+        coverAuthor.textContent = "Tamara Williams-Brown";
+      }
+
+      // 3. Update 3D Cover Image with Automatic Netlify/CDN Fallback
+      const coverImg = document.getElementById('book-cover-img');
+      const coverContainer = document.getElementById('book-cover-container');
+      if (coverImg) {
+        coverImg.referrerPolicy = 'no-referrer';
+        coverImg.alt = currentBook.title;
+        coverImg.style.display = 'block';
+        if (coverContainer) coverContainer.classList.add('has-image');
+
+        coverImg.onerror = function() {
+          if (currentBook.id === 'autism-book') {
+            coverImg.src = 'https://m.media-amazon.com/images/I/61Wda4havWL._SL1293_.jpg';
+          } else if (currentBook.id === 'classroom-strategies-book') {
+            coverImg.src = 'https://m.media-amazon.com/images/I/61cxDj2WDzL._SL1500_.jpg';
+          }
+        };
+
+        coverImg.src = currentBook.coverImage;
+      }
+
+      // 4. Update Amazon Buy Link
+      const primaryBuyBtn = document.getElementById('hero-primary-buy-btn');
+      if (primaryBuyBtn && currentBook.amazonUrl) {
+        primaryBuyBtn.href = currentBook.amazonUrl;
+      }
+
+      const book3dLink = document.getElementById('hero-book-3d-link');
+      if (book3dLink && currentBook.amazonUrl) {
+        book3dLink.href = currentBook.amazonUrl;
+      }
+
+      // 5. Update Dots
+      if (dotsContainer) {
+        dotsContainer.querySelectorAll('.hero-carousel-dot').forEach((dot, idx) => {
+          dot.classList.toggle('active', idx === activeIndex);
+        });
+      }
+
+      if (book3d) {
+        book3d.style.opacity = '1';
+        book3d.style.transform = 'rotateY(-20deg) rotateX(8deg) scale(1)';
+      }
+    }, 120);
   }
 
   // Direct Onclick Binding
