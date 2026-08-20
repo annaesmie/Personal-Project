@@ -499,11 +499,11 @@ h1, h2, h3, h4 {
 }
 
 .hero-carousel-prev {
-  left: 1.5rem;
+  left: -40px;
 }
 
 .hero-carousel-next {
-  right: 1.5rem;
+  right: -40px;
 }
 
 .hero-slide-bubble-wrapper {

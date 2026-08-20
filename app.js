@@ -741,7 +741,41 @@ function initHeroBookCarousel(data) {
     }
   }
 
-  // Global click delegation for hero carousel arrows
+  // 1. Physical Keyboard Arrow Keys (Left / Right)
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      const nextIndex = (activeIndex - 1 + books.length) % books.length;
+      switchBook(nextIndex, 'right');
+    } else if (e.key === 'ArrowRight') {
+      const nextIndex = (activeIndex + 1) % books.length;
+      switchBook(nextIndex, 'left');
+    }
+  });
+
+  // 2. Touch & Swipe Detection on Book Wrapper
+  const heroWrapper = document.querySelector('.hero-book-wrapper');
+  if (heroWrapper) {
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    heroWrapper.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    heroWrapper.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const swipeDistance = touchEndX - touchStartX;
+      if (swipeDistance > 40) {
+        const nextIndex = (activeIndex - 1 + books.length) % books.length;
+        switchBook(nextIndex, 'right');
+      } else if (swipeDistance < -40) {
+        const nextIndex = (activeIndex + 1) % books.length;
+        switchBook(nextIndex, 'left');
+      }
+    }, { passive: true });
+  }
+
+  // 3. Document Click Delegation for On-Screen Buttons
   document.addEventListener('click', (e) => {
     const prevTarget = e.target.closest('#hero-carousel-prev');
     const nextTarget = e.target.closest('#hero-carousel-next');
