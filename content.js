@@ -40,7 +40,7 @@ const BOOK_CONFIG = {
   books: [
     {
       id: "autism-book",
-      title: "Teaching Students with Autism",
+      title: "Teaching Students with Autism: Learning on the Spectrum",
       subtitle: "Practical Strategies for Neurodiverse Learning, Cognitive Growth & Inclusive Classrooms",
       tag: "Paperback • Kindle eBook",
       coverImage: "https://m.media-amazon.com/images/I/61Wda4havWL._SL1293_.jpg",
@@ -67,7 +67,7 @@ const BOOK_CONFIG = {
   ],
 
   book: {
-    title: "Teaching Students with Autism",
+    title: "Teaching Students with Autism: Learning on the Spectrum",
     subtitle: "Practical Strategies for Neurodiverse Learning, Cognitive Growth & Inclusive Classrooms",
     tag: "Paperback • Kindle eBook",
     coverImage: "https://m.media-amazon.com/images/I/61Wda4havWL._SL1293_.jpg",
@@ -106,48 +106,45 @@ const BOOK_CONFIG = {
       {
         icon: "🎯",
         title: "The Transfer Dilemma",
-        description: "Students ace standardized tests yet struggle to apply conceptual reasoning in novel, real-world contexts."
-      }
-    ],
-    quote: "“We do not have an attention span crisis in youth—we have a relevance crisis in our curriculum.”"
+        description: "Students ace standardized tests yet struggle to apply conceptual reasoning in novel, real-world cont    quote: "“Inclusion is not a checklist; it is an environment where every learner thrives.”"
   },
 
   // ---------------------------------------------------------------------------------------
   // 5. BOOK BLURB & KEY PILLARS
   // ---------------------------------------------------------------------------------------
   bookBlurb: {
-    badge: "About The Book",
-    heading: "A Scientific & Actionable Playbook for 21st-Century Learning",
+    badge: "About The Books",
+    heading: "Actionable Playbooks for Inclusive & Neurodiverse Classrooms",
     descriptionParagraphs: [
-      "In <em>The Modern Learner's Blueprint</em>, renowned cognitive researcher and educator Dr. Marcus Vance bridges cutting-edge neuroscience with practical, battle-tested classroom methods.",
-      "Whether you teach elementary students, lecture in higher education, or lead instructional design, this guide unpacks actionable systems to spark relentless curiosity, deepen comprehension, and build metacognitive autonomy."
+      "In <em>Teaching Students with Autism</em> and <em>Practical Classroom Strategies for Inclusion</em>, specialist and author Tamara Williams-Brown bridges cognitive research with practical, battle-tested classroom methods.",
+      "Whether you teach elementary students, lead special education, or manage instructional design, these guides unpack actionable systems to cultivate belonging, regulate cognitive load, and empower every learner."
     ],
     keyTakeaways: [
-      "The 4-stage Cognitive Arc: Hook, Explore, Consolidate, Transfer",
-      "How to design low-stakes micro-challenges that trigger dopamine-driven focus",
-      "Scaffolding self-regulated learning so students take ownership of inquiry",
-      "Frameworks for balancing digital tools with deep, deliberate reading"
+      "Strength-based scaffolding models for neurodiverse learners",
+      "Strategies for regulating sensory environments and reducing cognitive fatigue",
+      "Designing individualized communication channels and flexible pacing",
+      "Practical collaboration frameworks for teachers, parents, and specialists"
     ],
     chapters: [
       {
         number: "01",
-        title: "Rewiring the Learning Loop",
-        summary: "Why passive listening fails and how dopamine-gated attention triggers true retention."
+        title: "Understanding Neurodiversity",
+        summary: "Moving beyond deficit models to embrace authentic neurodiverse strengths."
       },
       {
         number: "02",
-        title: "The Metacognitive Shift",
-        summary: "Teaching students how they think, diagnosing blind spots, and self-directed mastery."
+        title: "Sensory & Environmental Design",
+        summary: "Crafting calming, predictable classroom spaces that foster focus."
       },
       {
         number: "03",
-        title: "Designing Friction & Desirable Difficulty",
-        summary: "Why productive struggle creates lasting neural connections and how to scaffold it."
+        title: "Executive Function & Scaffolding",
+        summary: "Visual structures, routine maps, and self-regulation toolkits."
       },
       {
         number: "04",
-        title: "Transfer & Real-World Application",
-        summary: "Moving beyond rote recall to synthetic problem-solving across disciplines."
+        title: "Fostering Social Belonging & Advocacy",
+        summary: "Building empathetic peer cultures and supporting student self-advocacy."
       }
     ]
   },
@@ -177,14 +174,12 @@ const BOOK_CONFIG = {
   // ---------------------------------------------------------------------------------------
   sampleExcerpt: {
     badge: "Sample Chapter Preview",
-    heading: "Experience Chapter 1: The Architecture of Attention",
-    readingTime: "5 min read",
+    heading: "Experience Chapter 1: Understanding Neurodiversity",
+    readingTime: "4 min read",
     chapterNumber: "Chapter 1 • Excerpt",
-    snippetText: `“Consider the last time a student truly lost track of time in your classroom. It was not during a presentation of neatly formatted bullet points. It happened when they were confronted with an authentic puzzle—a tension between what they expected and what actually occurred.
-
-Curiosity is not a personality trait; it is a neurochemical response to an information gap. When we present answers before students have felt the itch of the question, we rob the brain of its natural engine for retention...”`,
+    snippetText: `“When we shift from trying to 'fix' attention to designing for authentic strengths, classrooms transform. Neurodiversity is not an obstacle to curriculum delivery; it is an invitation to elevate the precision and empathy of our teaching...”`,
     pdfDownloadUrl: "#sample-pdf-download",
-    pdfFilename: "Modern_Learners_Blueprint_Sample_Chapter1.pdf"
+    pdfFilename: "Teaching_Students_With_Autism_Sample_Chapter1.pdf"
   },
 
   // ---------------------------------------------------------------------------------------
@@ -193,21 +188,21 @@ Curiosity is not a personality trait; it is a neurochemical response to an infor
   reviews: [
     {
       stars: 5,
-      quote: "The single most transformative book on teaching I have read in a decade. Every school district should put this in their new-teacher welcome kit.",
+      quote: "The single most transformative book on inclusive teaching I have read in a decade. Every school district should put this in their new-teacher welcome kit.",
       author: "Dr. Elena Rostova",
       role: "Dean of Education, Pacific Northwest University",
       organization: "PNU School of Education"
     },
     {
       stars: 5,
-      quote: "Marcus Vance has done the impossible: translated complex cognitive science into five-minute classroom routines that actually double student participation.",
+      quote: "Tamara Williams-Brown has done the impossible: translated complex neurodevelopmental research into five-minute classroom routines that actually empower neurodivergent learners.",
       author: "Terrence Wright",
       role: "2024 National Teacher of the Year Finalist",
       organization: "Oakridge High School"
     },
     {
       stars: 5,
-      quote: "A masterclass in modern pedagogy. The chapter on 'Desirable Difficulty' completely altered how our department designs exams.",
+      quote: "A masterclass in modern inclusive pedagogy. The chapter on 'Sensory Audit & Environmental Design' completely altered how our department structures learning spaces.",
       author: "Prof. Sarah Chen-Adams",
       role: "Department Chair of Cognitive Studies",
       organization: "Midwest Institute of Technology"
@@ -220,15 +215,15 @@ Curiosity is not a personality trait; it is a neurochemical response to an infor
   faqs: [
     {
       question: "Is this book suitable for K-12 teachers as well as university professors?",
-      answer: "Yes! The core principles of cognitive retention and curiosity architecture apply across all age groups. Each chapter includes explicit 'K-12 Application Notes' alongside 'Higher Education & Corporate Learning' adaptations."
+      answer: "Yes! The core principles of neurodiverse inclusion apply across all age groups. Each chapter includes explicit 'K-12 Application Notes' alongside adaptative teaching strategies."
     },
     {
       question: "Are bulk discounts available for schools, districts, and book clubs?",
-      answer: "Absolutely. We offer 30% to 50% discounts on orders of 15 copies or more, along with complimentary bulk digital companion worksheets. Contact bulk@marcusvanceeducation.com for an invoice."
+      answer: "Absolutely. We offer discounts on bulk orders for schools and districts. Contact hello@tamarabrowneducation.com for details."
     },
     {
       question: "Is there an audiobook version available?",
-      answer: "Yes, the audiobook is narrated directly by Dr. Marcus Vance and includes downloadable PDF companion graphs. Available on Audible, Apple Books, and Spotify Audiobooks."
+      answer: "Audiobook and eBook editions are available directly through Amazon and Audible."
     },
     {
       question: "How do I access the interactive companion worksheets?",
@@ -241,12 +236,13 @@ Curiosity is not a personality trait; it is a neurochemical response to an infor
   // ---------------------------------------------------------------------------------------
   newsletter: {
     heading: "Join The Educator's Weekly Dispatch",
-    subheading: "Get free chapter worksheets, classroom discussion templates, and Dr. Vance's weekly 3-minute pedagogical insight delivered every Tuesday.",
-    incentiveBadge: "🎁 Includes Free 18-Page Lesson Planning PDF Template",
+    subheading: "Get free chapter worksheets, classroom adaptation templates, and Tamara Williams-Brown's weekly teaching insights delivered straight to your inbox.",
+    incentiveBadge: "🎁 Includes Free Classroom Adaptation Toolkit PDF",
     inputPlaceholder: "Enter your institutional or personal email...",
     buttonText: "Get Free Toolkit & Subscribe",
-    successMessage: "🎉 You're in! Check your inbox for your 18-page toolkit and welcome guide.",
+    successMessage: "🎉 You're in! Check your inbox for your toolkit and welcome guide.",
     privacyNote: "Zero spam. Unsubscribe anytime in one click."
+  },m. Unsubscribe anytime in one click."
   },
 
   // ---------------------------------------------------------------------------------------

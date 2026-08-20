@@ -714,6 +714,12 @@ function initHeroBookCarousel(data) {
           book3dLink.href = currentBook.amazonUrl;
         }
 
+        // Update Centered Slide Bubble Text
+        const bubbleText = document.getElementById('hero-slide-bubble-text');
+        if (bubbleText) {
+          bubbleText.textContent = `Book ${index + 1} of ${books.length}: ${currentBook.title}`;
+        }
+
         book3d.classList.remove('slide-out-left', 'slide-out-right');
       }, 300);
     }
