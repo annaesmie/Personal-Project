@@ -639,7 +639,7 @@ function escapeHTML(str) {
    7. DUAL-BOOK HERO CAROUSEL / SLIDER LOGIC
    ========================================================================== */
 function initHeroBookCarousel(data) {
-  const books = data.books || [data.book];
+  const books = (data && data.books && data.books.length >= 2) ? data.books : BOOK_CONFIG.books;
   if (!books || books.length <= 1) return;
 
   const prevBtn = document.getElementById('hero-carousel-prev');
@@ -650,6 +650,16 @@ function initHeroBookCarousel(data) {
   const primaryBuyBtn = document.getElementById('hero-primary-buy-btn');
 
   let activeIndex = 0;
+
+  // Initial load cover image
+  const initialImg = document.getElementById('book-cover-img');
+  const initialContainer = document.getElementById('book-cover-container');
+  if (initialImg && books[0] && books[0].coverImage) {
+    initialImg.referrerPolicy = 'no-referrer';
+    initialImg.src = books[0].coverImage;
+    initialImg.style.display = 'block';
+    if (initialContainer) initialContainer.classList.add('has-image');
+  }
 
   // Render dots
   if (dotsContainer) {
@@ -678,9 +688,14 @@ function initHeroBookCarousel(data) {
         // Update Title & Subtitle
         const heroTitle = document.getElementById('hero-book-title');
         if (heroTitle) {
-          const parts = currentBook.title.split(' ');
-          const lastWord = parts.pop();
-          heroTitle.innerHTML = `${parts.join(' ')} <span>${lastWord}</span>`;
+          if (currentBook.title.includes(':')) {
+            const parts = currentBook.title.split(':');
+            heroTitle.innerHTML = `${parts[0]}: <span>${parts[1]}</span>`;
+          } else {
+            const parts = currentBook.title.split(' ');
+            const lastWord = parts.pop();
+            heroTitle.innerHTML = `${parts.join(' ')} <span>${lastWord}</span>`;
+          }
         }
 
         const heroSub = document.getElementById('hero-book-subtitle');
@@ -700,6 +715,7 @@ function initHeroBookCarousel(data) {
         const coverImg = document.getElementById('book-cover-img');
         const coverContainer = document.getElementById('book-cover-container');
         if (coverImg && currentBook.coverImage) {
+          coverImg.referrerPolicy = 'no-referrer';
           coverImg.src = currentBook.coverImage;
           coverImg.alt = currentBook.title;
           coverImg.style.display = 'block';
@@ -726,14 +742,16 @@ function initHeroBookCarousel(data) {
   }
 
   if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
       const nextIndex = (activeIndex - 1 + books.length) % books.length;
       switchBook(nextIndex, 'right');
     });
   }
 
   if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
       const nextIndex = (activeIndex + 1) % books.length;
       switchBook(nextIndex, 'left');
     });
