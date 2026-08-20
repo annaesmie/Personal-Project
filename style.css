@@ -276,6 +276,8 @@ h1, h2, h3, h4 {
   align-items: center;
   justify-content: space-between;
   height: 4.5rem;
+  max-width: 1360px;
+  gap: 2rem;
 }
 
 .brand-logo {
@@ -284,6 +286,7 @@ h1, h2, h3, h4 {
   gap: 0.75rem;
   text-decoration: none;
   color: var(--pure-white);
+  flex-shrink: 0;
 }
 
 .brand-icon {
@@ -318,7 +321,7 @@ h1, h2, h3, h4 {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  gap: 1.5rem;
   list-style: none;
 }
 
@@ -327,6 +330,7 @@ h1, h2, h3, h4 {
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
+  white-space: nowrap;
   transition: color var(--transition-fast);
 }
 
@@ -338,6 +342,16 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-left: auto;
+}
+
+#nav-buy-btn {
+  width: auto;
+  height: auto;
+  min-height: 42px;
+  padding: 0.55rem 1.15rem;
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 
 /* Mobile Menu Toggle */
@@ -532,29 +546,6 @@ h1, h2, h3, h4 {
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
 }
-  align-items: center;
-  justify-content: center;
-  gap: 0.65rem;
-  z-index: 10;
-}
-
-.hero-carousel-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.hero-carousel-dot.active {
-  background: #F59E0B;
-  border-color: #FBBF24;
-  width: 28px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
-}
 
 .book-glow {
   position: absolute;
@@ -566,39 +557,31 @@ h1, h2, h3, h4 {
 }
 
 .floating-companion-pill {
-  position: absolute;
-  top: -18px;
-  right: 10px;
-  background: rgba(23, 8, 41, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(245, 158, 11, 0.5);
+  position: relative;
+  margin-top: 1.75rem;
+  background: #170829;
+  border: 1.5px solid #F59E0B;
   color: #FFFFFF;
-  padding: 0.55rem 1.15rem;
+  padding: 0.5rem 1.15rem;
   border-radius: 9999px;
-  font-size: 0.85rem;
+  font-size: 0.825rem;
   font-weight: 700;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  z-index: 30;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 14px rgba(245, 158, 11, 0.3);
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 10px rgba(245, 158, 11, 0.25);
   text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  animation: floatPill 3.5s ease-in-out infinite alternate;
+  white-space: nowrap;
+  transition: all 0.25s ease;
 }
 
 .floating-companion-pill:hover {
-  background: rgba(245, 158, 11, 0.95);
+  background: #F59E0B;
   color: #170829;
   border-color: #FBBF24;
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 12px 28px rgba(245, 158, 11, 0.5);
-}
-
-@keyframes floatPill {
-  0% { transform: translateY(0px); }
-  100% { transform: translateY(-8px); }
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.5);
 }
 
 .book-3d {
@@ -774,52 +757,6 @@ h1, h2, h3, h4 {
   transform: rotateY(90deg) translateZ(5px);
   border-radius: 0 3px 3px 0;
   box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.25);
-}
-
-/* Floating companion pill on book */
-.floating-companion-pill {
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
-  background: var(--pure-white);
-  color: var(--navy-900);
-  padding: 0.75rem 1.25rem;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-xl);
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  z-index: 10;
-  border: 1px solid var(--slate-200);
-  animation: floatBounce 4s ease-in-out infinite alternate;
-}
-
-@keyframes floatBounce {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-8px); }
-}
-
-.companion-icon {
-  width: 2rem;
-  height: 2rem;
-  background: var(--emerald-light);
-  color: var(--emerald-600);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-}
-
-.companion-text-bold {
-  font-size: 0.85rem;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.companion-text-sub {
-  font-size: 0.75rem;
-  color: var(--slate-500);
 }
 
 /* ==========================================================================
