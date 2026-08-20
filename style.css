@@ -2,38 +2,38 @@
    THE MODERN LEARNER'S BLUEPRINT - DESIGN SYSTEM & STYLESHEET
    ========================================================================== */
 
-/* --- Custom CSS Variables & Tokens (Midnight Plum & Rose Theme) --- */
+/* --- Custom CSS Variables & Tokens (Golden Brown, Dark Blue & Light Beige Theme) --- */
 :root {
-  /* Color Palette - Midnight Plum & Deep Slate */
-  --navy-950: #0D0417;
-  --navy-900: #170829;
-  --navy-850: #210C3A;
-  --navy-800: #2D124F;
-  --slate-700: #3E1A68;
-  --slate-600: #55278C;
-  --slate-500: #743EB0;
-  --slate-400: #9E74D4;
-  --slate-300: #C9B2E8;
-  --slate-200: #E6DBF5;
-  --slate-100: #F6F1FC;
-  --off-white: #FAF7FD;
-  --pure-white: #FFFFFF;
+  /* Color Palette - Dark Sapphire Blue & Warm Light Beige */
+  --navy-950: #060B19;
+  --navy-900: #0A1128;
+  --navy-850: #101B3A;
+  --navy-800: #17264E;
+  --slate-700: #2C3A5A;
+  --slate-600: #3E4E73;
+  --slate-500: #576A92;
+  --slate-400: #8194BB;
+  --slate-300: #B2C1DF;
+  --slate-200: #DCE3F2;
+  --slate-100: #F2ECE1;
+  --off-white: #F9F6F0;
+  --pure-white: #FAF7F2;
 
-  /* Accent & Highlight Colors - Radiant Rose & Sunset Amber */
-  --gold-500: #F43F5E;
-  --gold-600: #E11D48;
-  --gold-400: #FB7185;
-  --gold-light: rgba(244, 63, 94, 0.12);
-  --gold-glow: rgba(244, 63, 94, 0.35);
+  /* Accent & Highlight Colors - Golden Brown & Warm Amber */
+  --gold-500: #C07D34;
+  --gold-600: #A26322;
+  --gold-400: #D9964A;
+  --gold-light: rgba(192, 125, 52, 0.12);
+  --gold-glow: rgba(192, 125, 52, 0.35);
 
   --emerald-500: #10B981;
   --emerald-600: #059669;
   --emerald-light: rgba(16, 185, 129, 0.12);
 
-  --rose-500: #F43F5E;
-  --rose-light: rgba(244, 63, 94, 0.12);
-  --plum-accent: #A855F7;
-  --sunset-amber: #FB923C;
+  --rose-500: #C07D34;
+  --rose-light: rgba(192, 125, 52, 0.12);
+  --plum-accent: #3E4E73;
+  --sunset-amber: #D9964A;
 
   /* Typography */
   --font-serif: 'Playfair Display', Georgia, Cambria, 'Times New Roman', serif;
@@ -42,11 +42,11 @@
 
   /* Elevation & Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(23, 8, 41, 0.1), 0 2px 4px -2px rgba(23, 8, 41, 0.08);
-  --shadow-lg: 0 10px 15px -3px rgba(23, 8, 41, 0.15), 0 4px 6px -4px rgba(23, 8, 41, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(23, 8, 41, 0.2), 0 8px 10px -6px rgba(23, 8, 41, 0.12);
-  --shadow-book: -15px 25px 50px -12px rgba(13, 4, 23, 0.5), 0 10px 20px -5px rgba(0, 0, 0, 0.3);
-  --shadow-glow: 0 0 30px rgba(244, 63, 94, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(10, 17, 40, 0.08), 0 2px 4px -2px rgba(10, 17, 40, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(10, 17, 40, 0.12), 0 4px 6px -4px rgba(10, 17, 40, 0.08);
+  --shadow-xl: 0 20px 25px -5px rgba(10, 17, 40, 0.16), 0 8px 10px -6px rgba(10, 17, 40, 0.1);
+  --shadow-book: -15px 25px 50px -12px rgba(6, 11, 25, 0.45), 0 10px 20px -5px rgba(0, 0, 0, 0.25);
+  --shadow-glow: 0 0 30px rgba(192, 125, 52, 0.3);
 
   /* Border Radius */
   --radius-sm: 8px;
@@ -453,7 +453,7 @@ h1, h2, h3, h4 {
   position: absolute;
   width: 340px;
   height: 440px;
-  background: radial-gradient(circle, rgba(244, 63, 94, 0.28) 0%, rgba(168, 85, 247, 0.15) 45%, rgba(23, 8, 41, 0) 75%);
+  background: radial-gradient(circle, rgba(192, 125, 52, 0.28) 0%, rgba(23, 38, 78, 0.2) 45%, rgba(6, 11, 25, 0) 75%);
   filter: blur(45px);
   z-index: 1;
 }
@@ -477,7 +477,7 @@ h1, h2, h3, h4 {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #170829 0%, #2D124F 60%, #170829 100%);
+  background: linear-gradient(135deg, #0A1128 0%, #17264E 60%, #0A1128 100%);
   border-radius: 4px 14px 14px 4px;
   box-shadow: var(--shadow-book);
   padding: 2rem 1.5rem;
