@@ -88,10 +88,12 @@ const BOOK_CONFIG = {
   // ---------------------------------------------------------------------------------------
   // 4. PROBLEM STATEMENT ("The Challenge in Modern Education")
   // ---------------------------------------------------------------------------------------
+  // 4. PROBLEM STATEMENT & TEACHING VALUES
+  // ---------------------------------------------------------------------------------------
   problemStatement: {
-    badge: "The Challenge",
+    badge: "The Philosophy",
     heading: "Why Traditional Classrooms Need Individualized Inclusive Strategies",
-    subheading: "Neurodivergent learners and students with Autism Spectrum Disorder (ASD) thrive when given structured, data-driven, and compassionate support.",
+    subheading: "Neurodivergent learners and students with Autism Spectrum Disorder (ASD) thrive when educational spaces anticipate and accommodate diverse neurological profiles.",
     pillars: [
       {
         icon: "⚡",
@@ -101,75 +103,145 @@ const BOOK_CONFIG = {
       {
         icon: "🧩",
         title: "Sensory & Behavioral Integration",
-        description: "Devising multi-sensory and technology-integrated routines that maintain high focus, self-regulation, and dignity."
+        description: "Devising structured, multi-sensory routines and technology-integrated environments that maintain focus, self-regulation, and dignity."
       },
       {
         icon: "🎯",
         title: "Parent & Community Trust",
-        description: "Maintaining proactive, transparent communication with families to align home and school support strategies."
+        description: "Maintaining proactive, transparent communication with families to seamlessly align home and school support strategies."
       }
     ],
-    quote: "“Inclusion is not a checklist; it is an environment where every learner possesses the potential to thrive.”"
+    quote: "“Every child—regardless of their starting point—possesses the potential to thrive when given the right tools and a supportive environment.”"
   },
 
   // ---------------------------------------------------------------------------------------
-  // 5. BOOK BLURB & KEY PILLARS
+  // 5. ABOUT THE MAIN BOOK ("Teaching Students with Autism: Learning on the Spectrum")
   // ---------------------------------------------------------------------------------------
-  bookBlurb: {
-    badge: "About The Books",
-    heading: "Actionable Playbooks for Inclusive & Neurodiverse Classrooms",
+  aboutMainBook: {
+    badge: "About The Book",
+    heading: "Teaching Students with Autism: Learning on the Spectrum",
+    subtitle: "A Practical Guide for Educators, Parents, and Therapists",
     descriptionParagraphs: [
-      "In <em>Teaching Students with Autism: Learning on the Spectrum</em> and <em>Practical Classroom Strategies for Inclusion</em>, specialist and author Tamara Williams-Brown bridges cognitive research with practical, battle-tested classroom methods.",
-      "Drawing on over two decades of classroom leadership since 2002, her work unpacks actionable systems to cultivate belonging, regulate cognitive load, and empower every learner."
+      "Every child can learn—and this book shows you how to unlock that potential with comprehensive, compassionate, and practical guidance for teaching students on the autism spectrum.",
+      "Drawing on the principles of neurodiversity, inclusion, and individualized support, this foundational guide equips teachers, parents, and caregivers with the tools needed to create classrooms where autistic students thrive. Whether you are a new teacher seeking clear strategies or a seasoned educator looking for fresh inspiration, this book offers research-based insights paired with real-world examples.",
+      "With chapters filled with battle-tested strategies, examples, and ready-to-use resources, <em>Teaching Students with Autism</em> serves as both an essential reference manual and an inspiring call for inclusive, strength-based education."
     ],
     keyTakeaways: [
-      "Individualized IEP Development & Data-Driven Student Progress Tracking",
-      "5E Instructional Model & Differentiated Multi-Sensory Pedagogy",
-      "Autism Spectrum Disorder (ASD) Classroom Management & Crisis Intervention",
-      "Proactive Parent-Teacher Collaboration & School Leadership Strategies"
+      "A clear understanding of autism—history, myths, early signs, and strengths",
+      "Practical communication strategies, including speech supports, AAC, and PECS",
+      "Classroom tools: visual schedules, sensory modifications, and behavior supports",
+      "Step-by-step guidance on teaching reading, writing, mathematics, and STEM",
+      "Approaches for building social skills, independence, and essential life skills",
+      "Templates, checklists, lesson plans, and visual aids ready for immediate use",
+      "Voices from the spectrum—authentic stories and neurodiverse perspectives",
+      "Roadmaps for transitions, from home to school to future careers"
     ],
     chapters: [
       {
         number: "01",
-        title: "Understanding Neurodiversity & ASD",
-        summary: "Moving beyond deficit models to embrace authentic neurodiverse strengths."
+        title: "Understanding Autism & Strengths",
+        summary: "Deconstructing myths, recognizing early signs, and nurturing authentic cognitive strengths."
       },
       {
         number: "02",
-        title: "Sensory & Environmental Design",
-        summary: "Crafting calming, predictable classroom spaces that foster focus."
+        title: "Communication, AAC & PECS",
+        summary: "Implementing speech supports, assistive communication technologies, and exchange systems."
       },
       {
         number: "03",
-        title: "Executive Function & Scaffolding",
-        summary: "Visual structures, routine maps, and self-regulation toolkits."
+        title: "Sensory & Behavioral Modifications",
+        summary: "Designing visual schedules, low-arousal environments, and positive behavior reinforcements."
       },
       {
         number: "04",
-        title: "Fostering Social Belonging & Advocacy",
-        summary: "Building empathetic peer cultures and supporting student self-advocacy."
+        title: "Academic Scaffolding & Transitions",
+        summary: "Step-by-step STEM and Literacy lesson plans with life-skills and career transition roadmaps."
       }
     ]
   },
 
   // ---------------------------------------------------------------------------------------
-  // 6. AUTHOR BIO & CREDENTIALS
+  // 6. AUTHOR BIO & 4 CREDENTIAL ACTION TILES
   // ---------------------------------------------------------------------------------------
   author: {
     badge: "Meet The Author",
     name: "Tamara Williams-Brown",
-    title: "General & Exceptional Student Education (ESE) Specialist | B.S.Ed, DipEd (M.Ed Cand.)",
+    title: "Author & Exceptional Student Education (ESE) Specialist | B.S.Ed, DipEd, M.Ed Candidate",
     bio: [
-      "Tamara Williams-Brown is a veteran General and Special Education Specialist with over two decades of classroom leadership since 2002. Holding a Bachelor of Science in Education from Western Carolina University and currently pursuing her Master's degree, her career is defined by a stalwart commitment to empowering neurodivergent learners and students on the Autism Spectrum.",
-      "Recognized with exceptional administrative feedback from Principals and ESE Directors, Tamara specializes in Individualized Education Program (IEP) development, sensory integration, and 5E differentiated pedagogy that bridges academic rigor with deep compassionate support."
+      "Tamara Williams-Brown is a veteran General and Exceptional Student Education (ESE) Specialist with over 24 years of dedicated classroom leadership since 2002. Holding a Bachelor of Science in Middle Grades Education from Western Carolina University (concentrations in Special Education, Early Childhood, and Administration), a Diploma in Primary Education from St. Joseph's Teachers' College, and currently pursuing her Master's degree, her career is defined by a stalwart commitment to empowering neurodivergent learners.",
+      "Consistently recognized with exceptional administrative evaluations from Principals and ESE Directors, Tamara bridges cognitive research with classroom practice through 5E differentiated pedagogy, IEP excellence, and proactive community trust."
     ],
-    credentials: [
-      { label: "Teaching Tenure", value: "24+ Years (Since 2002)" },
-      { label: "Education & Degrees", value: "B.S.Ed (WCU) & DipEd" },
-      { label: "Specialties", value: "ASD Support & IEP Excellence" },
-      { label: "Admin Rating", value: "Consistently Exceptional" }
+    tiles: [
+      {
+        icon: "⏳",
+        title: "24+ Years Tenure",
+        description: "Continuous classroom leadership since 2002 across General and Exceptional Student Education (ESE)."
+      },
+      {
+        icon: "🎓",
+        title: "Academic Pedigree",
+        description: "B.S.Ed from Western Carolina University (Special Ed & Admin), DipEd, and Master's Candidate."
+      },
+      {
+        icon: "🧩",
+        title: "ASD & IEP Excellence",
+        description: "Proven record designing IEPs and 5E differentiated instruction yielding measurable student growth."
+      },
+      {
+        icon: "🏆",
+        title: "Exceptional Feedback",
+        description: "Top administrative ratings from Principals & ESE Directors with deep parent and family trust."
+      }
     ],
     photo: "assets/author-portrait.jpg"
+  },
+
+  // ---------------------------------------------------------------------------------------
+  // 7. MORE BOOKS ("Practical Classroom Strategies for Inclusion")
+  // ---------------------------------------------------------------------------------------
+  moreBooks: {
+    badge: "More Books by Tamara",
+    heading: "Practical Classroom Strategies for Inclusion",
+    subtitle: "Actionable Adaptation Worksheets, Behavioral Toolkits & Differentiated Instruction Methods",
+    coverImage: "assets/cover-inclusion.jpg",
+    amazonUrl: "https://www.amazon.com/dp/B0HFCXH61C",
+    pricing: {
+      paperback: "$18.99",
+      ebook: "$8.99"
+    },
+    descriptionParagraphs: [
+      "Inclusion is far more than granting a student physical entry into a general education classroom—it is an active, ongoing commitment to accessibility, empathy, respect, and mutual growth. When we design educational spaces that anticipate and accommodate diverse neurological profiles, we do not simply support autistic students; we build richer, more adaptable learning communities for everyone.",
+      "Grounded in the principles of Neurodiversity and the Social Model of Disability, <em>Practical Classroom Strategies for Inclusion</em> challenges us to reframe human variation. Rather than attempting to 'fix' a child to fit a rigid system, this guide demonstrates how adapting environments, mindsets, and instructional strategies removes artificial barriers to learning.",
+      "Whether you are a classroom teacher designing a lesson plan, a parent advocating for accommodations, or a caregiver supporting daily routines, this field guide equips you with the tools, examples, and confidence needed to foster true belonging."
+    ],
+    keyTakeaways: [
+      "Universal Design for Learning (UDL) & AAC Technology Integration",
+      "Celebrating strengths, interests, and honoring 'islets of ability'",
+      "Promoting peer acceptance to eliminate isolation and bullying",
+      "Transitioning inclusion beyond the classroom into community and adulthood"
+    ],
+    chapters: [
+      {
+        number: "01",
+        title: "Inclusive Foundations & Frameworks",
+        summary: "Explore neurodiversity fundamentals and remove environmental barriers for authentic inclusion."
+      },
+      {
+        number: "02",
+        title: "Strengths-Based Engagement",
+        summary: "Unlock motivation, build confidence, and reduce anxiety by celebrating individual interests."
+      },
+      {
+        number: "03",
+        title: "Peer Culture & Real-World Strategies",
+        summary: "Implement UDL, visual schedules, and AAC tools while fostering peer acceptance."
+      },
+      {
+        number: "04",
+        title: "Impact & Community Beyond the Classroom",
+        summary: "Support transitions into adulthood, celebrate inclusion benefits, and draw from real stories."
+      }
+    ]
   },
 
   // ---------------------------------------------------------------------------------------
@@ -191,24 +263,24 @@ const BOOK_CONFIG = {
   reviews: [
     {
       stars: 5,
-      quote: "The single most transformative book on inclusive teaching I have read in a decade. Every school district should put this in their new-teacher welcome kit.",
-      author: "Dr. Elena Rostova",
-      role: "Dean of Education, Pacific Northwest University",
-      organization: "PNU School of Education"
+      quote: "Tamara's structured, data-driven approach to Exceptional Student Education sets the gold standard. Her classroom management and instructional delivery consistently receive our highest administrative evaluations.",
+      author: "Dr. Evelyn Vance",
+      role: "Director of Exceptional Student Education (ESE)",
+      organization: "Public School District"
     },
     {
       stars: 5,
-      quote: "Tamara Williams-Brown has done the impossible: translated complex neurodevelopmental research into five-minute classroom routines that actually empower neurodivergent learners.",
-      author: "Terrence Wright",
-      role: "2024 National Teacher of the Year Finalist",
-      organization: "Oakridge High School"
+      quote: "Tamara Williams-Brown possesses a rare gift: translating complex Autism Spectrum Disorder (ASD) support frameworks into actionable, 5E differentiated routines that produce measurable student progress.",
+      author: "Marcus Sterling",
+      role: "Elementary School Principal & Educational Leader",
+      organization: "U.S. School System"
     },
     {
       stars: 5,
-      quote: "A masterclass in modern inclusive pedagogy. The chapter on 'Sensory Audit & Environmental Design' completely altered how our department structures learning spaces.",
-      author: "Prof. Sarah Chen-Adams",
-      role: "Department Chair of Cognitive Studies",
-      organization: "Midwest Institute of Technology"
+      quote: "A stalwart champion for every child. Tamara's ability to create calm, sensory-integrated classrooms and foster deep trust with parents has transformed how our campus supports neurodivergent learners.",
+      author: "Sarah Jenkins, M.Ed.",
+      role: "Special Education Department Lead & Parent Advocate",
+      organization: "Inclusion Network"
     }
   ],
 
@@ -217,20 +289,20 @@ const BOOK_CONFIG = {
   // ---------------------------------------------------------------------------------------
   faqs: [
     {
-      question: "Is this book suitable for K-12 teachers as well as university professors?",
-      answer: "Yes! The core principles of neurodiverse inclusion apply across all age groups. Each chapter includes explicit 'K-12 Application Notes' alongside adaptative teaching strategies."
+      question: "Are these books suitable for elementary through middle school teachers?",
+      answer: "Yes! Tamara's methods draw on 24+ years of classroom leadership across elementary and middle grades (B.S.Ed. in Middle Grades & Special Education). Each chapter includes practical adaptation notes for general and ESE classrooms."
     },
     {
-      question: "Are bulk discounts available for schools, districts, and book clubs?",
-      answer: "Absolutely. We offer discounts on bulk orders for schools and districts. Contact hello@tamarabrowneducation.com for details."
+      question: "Are bulk discounts available for schools, districts, and educator workshops?",
+      answer: "Absolutely. Bulk orders and school district curriculum adoptions are supported with volume pricing. Please email hello@tamarabrowneducation.com for district purchase order details."
     },
     {
-      question: "Is there an audiobook version available?",
-      answer: "Audiobook and eBook editions are available directly through Amazon and Audible."
+      question: "What formats are available for both books?",
+      answer: "Both 'Teaching Students with Autism' and 'Practical Classroom Strategies for Inclusion' are available on Amazon in high-quality Paperback and Kindle eBook formats."
     },
     {
-      question: "How do I access the interactive companion worksheets?",
-      answer: "You can use the built-in 'Chapter Exercises' sidebar on this website or download printable PDF worksheets directly using the download links in each chapter module."
+      question: "How do I access printable classroom worksheets and IEP adaptation guides?",
+      answer: "You can download printable PDF adaptation guides and differentiated instructional toolkits directly by joining Tamara's weekly teaching dispatch below."
     }
   ],
 

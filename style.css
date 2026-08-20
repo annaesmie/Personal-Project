@@ -565,6 +565,42 @@ h1, h2, h3, h4 {
   z-index: 1;
 }
 
+.floating-companion-pill {
+  position: absolute;
+  top: -18px;
+  right: 10px;
+  background: rgba(23, 8, 41, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  color: #FFFFFF;
+  padding: 0.55rem 1.15rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 30;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 14px rgba(245, 158, 11, 0.3);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: floatPill 3.5s ease-in-out infinite alternate;
+}
+
+.floating-companion-pill:hover {
+  background: rgba(245, 158, 11, 0.95);
+  color: #170829;
+  border-color: #FBBF24;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(245, 158, 11, 0.5);
+}
+
+@keyframes floatPill {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-8px); }
+}
+
 .book-3d {
   position: relative;
   width: 270px;
@@ -978,6 +1014,55 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================================================================
+   MORE BOOKS SECTION (BOOK 2: 3D DISPLAY & MODULES)
+   ========================================================================== */
+.more-books-section {
+  background-color: var(--pure-white);
+  border-top: 1px solid var(--slate-200);
+  border-bottom: 1px solid var(--slate-200);
+}
+
+.more-books-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.more-books-mockup-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.more-books-cta-box {
+  width: 100%;
+  margin-top: 2rem;
+  background: var(--slate-50);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--slate-200);
+}
+
+.more-books-content-col {
+  font-size: 1.05rem;
+  color: var(--slate-700);
+  line-height: 1.75;
+}
+
+.more-books-content-col p {
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .more-books-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* ==========================================================================
    AUTHOR BIO & CREDENTIALS
    ========================================================================== */
 .author-section {
@@ -1037,27 +1122,40 @@ h1, h2, h3, h4 {
 }
 
 .stat-card {
-  background: var(--off-white);
-  padding: 1.25rem 1.5rem;
-  border-radius: var(--radius-md);
+  background: var(--pure-white);
+  padding: 1.35rem 1.5rem;
+  border-radius: var(--radius-lg);
   border: 1px solid var(--slate-200);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-400);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-icon {
+  font-size: 1.6rem;
+  margin-bottom: 0.15rem;
 }
 
 .stat-value {
   font-family: var(--font-serif);
-  font-size: 1.85rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--navy-900);
-  line-height: 1.1;
-  margin-bottom: 0.25rem;
+  line-height: 1.2;
 }
 
-.stat-label {
-  font-size: 0.8rem;
-  color: var(--slate-500);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+.stat-desc {
+  font-size: 0.88rem;
+  color: var(--slate-600);
+  line-height: 1.45;
 }
 
 .author-bio-text {

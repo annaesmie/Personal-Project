@@ -1,6 +1,6 @@
-# Tamara Williams-Brown — Author Portfolio & Educational Companion
+# Tamara Williams-Brown — Author Portfolio & Educational Books
 
-A web platform and interactive study companion showcasing published works, research, and inclusive teaching frameworks by **Tamara Williams-Brown**, General & Exceptional Student Education (ESE) Specialist and author.
+A web platform showcasing published works, research, and inclusive teaching frameworks by **Tamara Williams-Brown**, General & Exceptional Student Education (ESE) Specialist and author.
 
 🌐 **Live Website:** [https://tamarawbeducation.netlify.app/](https://tamarawbeducation.netlify.app/)
 
@@ -20,23 +20,22 @@ A web platform and interactive study companion showcasing published works, resea
 
 ## 📖 Published Books
 
-### 1. **Teaching Students with Autism: Learning on the Spectrum**
+### 1. **Teaching Students with Autism: Learning on the Spectrum** *(Hero Spotlight)*
 * **Format:** Paperback • Kindle eBook
 * **Amazon Link:** [Order on Amazon](https://www.amazon.com/dp/B0G5D23712)
-* **Overview:** A practical, dignity-first guide equipping educators, parents, and instructional leaders with actionable frameworks for neurodiverse classrooms, sensory environment optimization, and cognitive engagement.
+* **Overview:** Featured exclusively in the top hero section with a 3D book showcase and single-click Amazon ordering. A practical, dignity-first guide equipping educators, parents, and instructional leaders with actionable frameworks for neurodiverse classrooms, sensory environment optimization, and cognitive engagement.
 
-### 2. **Practical Classroom Strategies for Inclusion**
+### 2. **Practical Classroom Strategies for Inclusion** *(More Books Section)*
 * **Format:** Paperback • Kindle eBook
 * **Amazon Link:** [Order on Amazon](https://www.amazon.com/dp/B0HFCXH61C)
-* **Overview:** A companion workbook and field guide featuring adaptation worksheets, behavioral toolkits, executive function visual aids, and differentiated instruction methods.
+* **Overview:** Featured in the dedicated "More Books by Tamara" section with adaptation worksheets, behavioral toolkits, executive function visual aids, and differentiated instruction methods.
 
 ---
 
 ## ✨ Web Platform Highlights
 
-* 🎠 **Dual-Book 3D Hero Spotlight:** An interactive 3D book mockup slider framed between borderless floating navigation controls and minimalist indicator dots (`● ○`).
-* 🖼️ **Local Cover Image Assets:** High-resolution local cover artwork (`assets/cover-autism.jpg` & `assets/cover-inclusion.jpg`) ensuring 100% instant image loading with zero CDN/CORS hotlink blocking.
-* 🛒 **Direct Amazon-Only Flow:** Streamlined single-click purchase links taking readers directly to Tamara's official Amazon paperback and eBook listings.
+* 🌟 **Dedicated Hero Spotlight:** Top of page focuses 100% on Tamara's flagship book *Teaching Students with Autism* with a clean, high-converting 3D mockup.
+* 📚 **Dedicated "More Books" Section:** Showcases *Practical Classroom Strategies for Inclusion* with complete chapter modules and direct Amazon links.
+* 🛒 **Direct Amazon Flow:** Single-click purchase links taking readers directly to Tamara's official Amazon paperback and eBook listings.
 * 🎨 **Design System:** A high-contrast color palette featuring a warm Light Beige (`#FAF7F2`) body background, pure white card containers (`#FFFFFF`), white buttons with vibrant yellow borders (`#F59E0B`), and deep Midnight Plum (`#170829`) hero and footer accents.
-* 🧠 **Interactive Study Companion:** A slide-out study drawer offering 4 chapters of interactive self-assessments, reflection logs, and progress checklists for educators.
 * 📬 **Netlify Newsletter Integration:** Built-in form handling for Tamara's weekly teaching dispatch and downloadable PDF adaptation toolkits.

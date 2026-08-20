@@ -33,8 +33,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   renderSite(activeData);
 
   // 3. Initialize Interactive Components
-  initHeroBookCarousel(activeData);
-  initExerciseDrawer(activeData.exercisesSidebar);
   initFaqAccordion();
   initModals();
   initNewsletterForm(activeData.newsletter);
@@ -132,21 +130,24 @@ function renderSite(data) {
     }
   }
 
-  // Book Overview & Chapters
-  if (data.bookBlurb) {
+  // 1. About The Main Book (Book 1: Teaching Students with Autism)
+  const book1Data = data.aboutMainBook || data.bookBlurb;
+  if (book1Data) {
     const oBadge = document.getElementById('overview-badge');
-    if (oBadge) oBadge.textContent = data.bookBlurb.badge;
+    if (oBadge) oBadge.textContent = book1Data.badge || 'About The Book';
     const oHeading = document.getElementById('overview-heading');
-    if (oHeading) oHeading.textContent = data.bookBlurb.heading;
+    if (oHeading) oHeading.textContent = book1Data.heading;
+    const oSub = document.getElementById('overview-subheading');
+    if (oSub && book1Data.subtitle) oSub.textContent = book1Data.subtitle;
 
     const pContainer = document.getElementById('overview-paragraphs');
-    if (pContainer && data.bookBlurb.descriptionParagraphs) {
-      pContainer.innerHTML = data.bookBlurb.descriptionParagraphs.map(p => `<p>${p}</p>`).join('');
+    if (pContainer && book1Data.descriptionParagraphs) {
+      pContainer.innerHTML = book1Data.descriptionParagraphs.map(p => `<p>${p}</p>`).join('');
     }
 
     const takeawaysContainer = document.getElementById('overview-takeaways');
-    if (takeawaysContainer && data.bookBlurb.keyTakeaways) {
-      takeawaysContainer.innerHTML = data.bookBlurb.keyTakeaways.map(item => `
+    if (takeawaysContainer && book1Data.keyTakeaways) {
+      takeawaysContainer.innerHTML = book1Data.keyTakeaways.map(item => `
         <li class="takeaway-item">
           <span class="takeaway-check">✓</span>
           <span>${escapeHTML(item)}</span>
@@ -155,8 +156,8 @@ function renderSite(data) {
     }
 
     const chContainer = document.getElementById('chapters-container');
-    if (chContainer && data.bookBlurb.chapters) {
-      chContainer.innerHTML = data.bookBlurb.chapters.map(ch => `
+    if (chContainer && book1Data.chapters) {
+      chContainer.innerHTML = book1Data.chapters.map(ch => `
         <div class="chapter-card">
           <div class="chapter-num-badge">${ch.number}</div>
           <div class="chapter-info">
@@ -168,7 +169,7 @@ function renderSite(data) {
     }
   }
 
-  // Author Bio & Stats
+  // 2. Author Bio & Stats
   if (data.author) {
     const aName = document.getElementById('author-name');
     if (aName) aName.textContent = data.author.name;
@@ -181,11 +182,77 @@ function renderSite(data) {
     }
 
     const statsContainer = document.getElementById('author-stats-container');
-    if (statsContainer && data.author.credentials) {
+    if (statsContainer && data.author.tiles) {
+      statsContainer.innerHTML = data.author.tiles.map(tile => `
+        <div class="stat-card">
+          <div class="stat-icon">${tile.icon || '✦'}</div>
+          <div class="stat-value">${escapeHTML(tile.title)}</div>
+          <div class="stat-desc">${escapeHTML(tile.description)}</div>
+        </div>
+      `).join('');
+    } else if (statsContainer && data.author.credentials) {
       statsContainer.innerHTML = data.author.credentials.map(stat => `
         <div class="stat-card">
           <div class="stat-value">${escapeHTML(stat.value)}</div>
-          <div class="stat-label">${escapeHTML(stat.label)}</div>
+          <div class="stat-desc">${escapeHTML(stat.label)}</div>
+        </div>
+      `).join('');
+    }
+  }
+
+  // 3. More Books Section (Book 2: Practical Classroom Strategies for Inclusion)
+  if (data.moreBooks) {
+    const mbBadge = document.getElementById('morebooks-badge');
+    if (mbBadge) mbBadge.textContent = data.moreBooks.badge || 'More Books by Tamara';
+    const mbHeading = document.getElementById('morebooks-heading');
+    if (mbHeading) mbHeading.textContent = data.moreBooks.heading;
+    const mbSub = document.getElementById('morebooks-subheading');
+    if (mbSub && data.moreBooks.subtitle) mbSub.textContent = data.moreBooks.subtitle;
+
+    const mbCoverImg = document.getElementById('morebooks-cover-img');
+    if (mbCoverImg && data.moreBooks.coverImage) {
+      mbCoverImg.referrerPolicy = 'no-referrer';
+      mbCoverImg.src = data.moreBooks.coverImage;
+      mbCoverImg.alt = data.moreBooks.heading;
+      mbCoverImg.onerror = function() {
+        mbCoverImg.src = 'https://m.media-amazon.com/images/I/61cxDj2WDzL._SL1500_.jpg';
+      };
+    }
+
+    const mbPaperback = document.getElementById('morebooks-price-paperback');
+    if (mbPaperback && data.moreBooks.pricing) mbPaperback.textContent = data.moreBooks.pricing.paperback;
+    const mbEbook = document.getElementById('morebooks-price-ebook');
+    if (mbEbook && data.moreBooks.pricing) mbEbook.textContent = data.moreBooks.pricing.ebook;
+
+    const mbBuyBtn = document.getElementById('morebooks-buy-btn');
+    if (mbBuyBtn && data.moreBooks.amazonUrl) mbBuyBtn.href = data.moreBooks.amazonUrl;
+    const mb3dLink = document.getElementById('morebooks-3d-link');
+    if (mb3dLink && data.moreBooks.amazonUrl) mb3dLink.href = data.moreBooks.amazonUrl;
+
+    const mbParagraphs = document.getElementById('morebooks-paragraphs');
+    if (mbParagraphs && data.moreBooks.descriptionParagraphs) {
+      mbParagraphs.innerHTML = data.moreBooks.descriptionParagraphs.map(p => `<p>${p}</p>`).join('');
+    }
+
+    const mbTakeaways = document.getElementById('morebooks-takeaways');
+    if (mbTakeaways && data.moreBooks.keyTakeaways) {
+      mbTakeaways.innerHTML = data.moreBooks.keyTakeaways.map(item => `
+        <li class="takeaway-item">
+          <span class="takeaway-check">✓</span>
+          <span>${escapeHTML(item)}</span>
+        </li>
+      `).join('');
+    }
+
+    const mbChapters = document.getElementById('morebooks-chapters-container');
+    if (mbChapters && data.moreBooks.chapters) {
+      mbChapters.innerHTML = data.moreBooks.chapters.map(ch => `
+        <div class="chapter-card">
+          <div class="chapter-num-badge">${ch.number}</div>
+          <div class="chapter-info">
+            <h4>Chapter ${ch.number}: ${escapeHTML(ch.title)}</h4>
+            <p>${escapeHTML(ch.summary)}</p>
+          </div>
         </div>
       `).join('');
     }
