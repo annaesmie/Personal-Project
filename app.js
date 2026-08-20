@@ -639,27 +639,14 @@ function escapeHTML(str) {
    7. DUAL-BOOK HERO CAROUSEL / SLIDER LOGIC
    ========================================================================== */
 function initHeroBookCarousel(data) {
-  const books = (data && data.books && data.books.length >= 2) ? data.books : BOOK_CONFIG.books;
-  if (!books || books.length <= 1) return;
+  const books = BOOK_CONFIG.books;
+  if (!books || books.length === 0) return;
 
   const prevBtn = document.getElementById('hero-carousel-prev');
   const nextBtn = document.getElementById('hero-carousel-next');
   const dotsContainer = document.getElementById('hero-carousel-dots');
-  const book3d = document.getElementById('hero-book-3d');
-  const book3dLink = document.getElementById('hero-book-3d-link');
-  const primaryBuyBtn = document.getElementById('hero-primary-buy-btn');
 
   let activeIndex = 0;
-
-  // Initial load cover image
-  const initialImg = document.getElementById('book-cover-img');
-  const initialContainer = document.getElementById('book-cover-container');
-  if (initialImg && books[0] && books[0].coverImage) {
-    initialImg.referrerPolicy = 'no-referrer';
-    initialImg.src = books[0].coverImage;
-    initialImg.style.display = 'block';
-    if (initialContainer) initialContainer.classList.add('has-image');
-  }
 
   // Render dots
   if (dotsContainer) {
@@ -668,72 +655,79 @@ function initHeroBookCarousel(data) {
     `).join('');
 
     dotsContainer.querySelectorAll('.hero-carousel-dot').forEach(dot => {
-      dot.addEventListener('click', () => {
+      dot.onclick = (e) => {
+        e.preventDefault();
         const targetIdx = parseInt(dot.getAttribute('data-idx'), 10);
-        if (targetIdx !== activeIndex) {
-          switchBook(targetIdx, targetIdx > activeIndex ? 'left' : 'right');
-        }
-      });
+        showBook(targetIdx);
+      };
     });
   }
 
-  function switchBook(index, direction = 'left') {
-    if (!books[index]) return;
-    activeIndex = index;
-    const currentBook = books[index];
+  function showBook(index) {
+    activeIndex = (index + books.length) % books.length;
+    const currentBook = books[activeIndex];
+    if (!currentBook) return;
 
-    if (book3d) {
-      book3d.classList.add(direction === 'left' ? 'slide-out-left' : 'slide-out-right');
-      setTimeout(() => {
-        // Update Title & Subtitle
-        const heroTitle = document.getElementById('hero-book-title');
-        if (heroTitle) {
-          if (currentBook.title.includes(':')) {
-            const parts = currentBook.title.split(':');
-            heroTitle.innerHTML = `${parts[0]}: <span>${parts[1]}</span>`;
-          } else {
-            const parts = currentBook.title.split(' ');
-            const lastWord = parts.pop();
-            heroTitle.innerHTML = `${parts.join(' ')} <span>${lastWord}</span>`;
-          }
-        }
-
-        const heroSub = document.getElementById('hero-book-subtitle');
-        if (heroSub) heroSub.textContent = currentBook.subtitle;
-
-        const heroBadge = document.getElementById('hero-badge-text');
-        if (heroBadge && currentBook.badgeText) {
-          heroBadge.innerHTML = `${currentBook.badgeText}`;
-        }
-
-        const pricePaperback = document.getElementById('price-paperback');
-        if (pricePaperback && currentBook.pricing) pricePaperback.textContent = currentBook.pricing.paperback || '$19.99';
-
-        const priceEbook = document.getElementById('price-ebook');
-        if (priceEbook && currentBook.pricing) priceEbook.textContent = currentBook.pricing.ebook || '$9.99';
-
-        const coverImg = document.getElementById('book-cover-img');
-        const coverContainer = document.getElementById('book-cover-container');
-        if (coverImg && currentBook.coverImage) {
-          coverImg.referrerPolicy = 'no-referrer';
-          coverImg.src = currentBook.coverImage;
-          coverImg.alt = currentBook.title;
-          coverImg.style.display = 'block';
-          if (coverContainer) coverContainer.classList.add('has-image');
-        }
-
-        if (primaryBuyBtn && currentBook.amazonUrl) {
-          primaryBuyBtn.href = currentBook.amazonUrl;
-        }
-
-        if (book3dLink && currentBook.amazonUrl) {
-          book3dLink.href = currentBook.amazonUrl;
-        }
-
-        book3d.classList.remove('slide-out-left', 'slide-out-right');
-      }, 300);
+    // 1. Update Title & Subtitle
+    const heroTitle = document.getElementById('hero-book-title');
+    if (heroTitle) {
+      if (currentBook.title.includes(':')) {
+        const parts = currentBook.title.split(':');
+        heroTitle.innerHTML = `${parts[0]}: <span>${parts[1]}</span>`;
+      } else {
+        const parts = currentBook.title.split(' ');
+        const lastWord = parts.pop();
+        heroTitle.innerHTML = `${parts.join(' ')} <span>${lastWord}</span>`;
+      }
     }
 
+    const heroSub = document.getElementById('hero-book-subtitle');
+    if (heroSub) heroSub.textContent = currentBook.subtitle;
+
+    const heroBadge = document.getElementById('hero-badge-text');
+    if (heroBadge && currentBook.badgeText) {
+      heroBadge.innerHTML = `${currentBook.badgeText}`;
+    }
+
+    const pricePaperback = document.getElementById('price-paperback');
+    if (pricePaperback && currentBook.pricing) pricePaperback.textContent = currentBook.pricing.paperback || '$19.99';
+
+    const priceEbook = document.getElementById('price-ebook');
+    if (priceEbook && currentBook.pricing) priceEbook.textContent = currentBook.pricing.ebook || '$9.99';
+
+    // 2. Update 3D Cover Image with Automatic Netlify/CDN Fallback
+    const coverImg = document.getElementById('book-cover-img');
+    const coverContainer = document.getElementById('book-cover-container');
+    if (coverImg) {
+      coverImg.referrerPolicy = 'no-referrer';
+      coverImg.alt = currentBook.title;
+      coverImg.style.display = 'block';
+      if (coverContainer) coverContainer.classList.add('has-image');
+
+      coverImg.onerror = function() {
+        // If local asset path fails on Netlify, fallback directly to Amazon CDN image
+        if (currentBook.id === 'autism-book') {
+          coverImg.src = 'https://m.media-amazon.com/images/I/61Wda4havWL._SL1293_.jpg';
+        } else if (currentBook.id === 'classroom-strategies-book') {
+          coverImg.src = 'https://m.media-amazon.com/images/I/61cxDj2WDzL._SL1500_.jpg';
+        }
+      };
+
+      coverImg.src = currentBook.coverImage;
+    }
+
+    // 3. Update Amazon Link
+    const primaryBuyBtn = document.getElementById('hero-primary-buy-btn');
+    if (primaryBuyBtn && currentBook.amazonUrl) {
+      primaryBuyBtn.href = currentBook.amazonUrl;
+    }
+
+    const book3dLink = document.getElementById('hero-book-3d-link');
+    if (book3dLink && currentBook.amazonUrl) {
+      book3dLink.href = currentBook.amazonUrl;
+    }
+
+    // 4. Update Dots
     if (dotsContainer) {
       dotsContainer.querySelectorAll('.hero-carousel-dot').forEach((dot, idx) => {
         dot.classList.toggle('active', idx === activeIndex);
@@ -741,71 +735,46 @@ function initHeroBookCarousel(data) {
     }
   }
 
-  // 1. Physical Keyboard Arrow Keys (Left / Right)
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') {
-      const nextIndex = (activeIndex - 1 + books.length) % books.length;
-      switchBook(nextIndex, 'right');
-    } else if (e.key === 'ArrowRight') {
-      const nextIndex = (activeIndex + 1) % books.length;
-      switchBook(nextIndex, 'left');
-    }
-  });
-
-  // 2. Touch & Swipe Detection on Book Wrapper
-  const heroWrapper = document.querySelector('.hero-book-wrapper');
-  if (heroWrapper) {
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    heroWrapper.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    heroWrapper.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      const swipeDistance = touchEndX - touchStartX;
-      if (swipeDistance > 40) {
-        const nextIndex = (activeIndex - 1 + books.length) % books.length;
-        switchBook(nextIndex, 'right');
-      } else if (swipeDistance < -40) {
-        const nextIndex = (activeIndex + 1) % books.length;
-        switchBook(nextIndex, 'left');
-      }
-    }, { passive: true });
+  // Direct Onclick Binding
+  if (prevBtn) {
+    prevBtn.onclick = function(e) {
+      if (e) { e.preventDefault(); e.stopPropagation(); }
+      showBook(activeIndex - 1);
+    };
   }
 
-  // 3. Document Click Delegation for On-Screen Buttons
-  document.addEventListener('click', (e) => {
+  if (nextBtn) {
+    nextBtn.onclick = function(e) {
+      if (e) { e.preventDefault(); e.stopPropagation(); }
+      showBook(activeIndex + 1);
+    };
+  }
+
+  // Global document click delegation as secondary safeguard
+  document.addEventListener('click', function(e) {
     const prevTarget = e.target.closest('#hero-carousel-prev');
     const nextTarget = e.target.closest('#hero-carousel-next');
 
     if (prevTarget) {
       e.preventDefault();
       e.stopPropagation();
-      const nextIndex = (activeIndex - 1 + books.length) % books.length;
-      switchBook(nextIndex, 'right');
+      showBook(activeIndex - 1);
     } else if (nextTarget) {
       e.preventDefault();
       e.stopPropagation();
-      const nextIndex = (activeIndex + 1) % books.length;
-      switchBook(nextIndex, 'left');
+      showBook(activeIndex + 1);
     }
   });
 
-  if (prevBtn) {
-    prevBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const nextIndex = (activeIndex - 1 + books.length) % books.length;
-      switchBook(nextIndex, 'right');
-    });
-  }
+  // Keyboard Arrow Keys (Left / Right)
+  window.onkeydown = function(e) {
+    if (e.key === 'ArrowLeft') {
+      showBook(activeIndex - 1);
+    } else if (e.key === 'ArrowRight') {
+      showBook(activeIndex + 1);
+    }
+  };
 
-  if (nextBtn) {
-    nextBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const nextIndex = (activeIndex + 1) % books.length;
-      switchBook(nextIndex, 'left');
-    });
-  }
+  // Initial display
+  showBook(0);
 }

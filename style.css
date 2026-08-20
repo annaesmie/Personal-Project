@@ -472,18 +472,18 @@ h1, h2, h3, h4 {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   background: transparent !important;
   border: none !important;
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 3.5rem;
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 4rem;
   font-weight: 300;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 100;
+  z-index: 999;
   pointer-events: auto;
   box-shadow: none !important;
   transition: all 0.25s ease;
@@ -492,37 +492,46 @@ h1, h2, h3, h4 {
 
 .hero-carousel-arrow:hover {
   background: transparent !important;
-  color: #F59E0B;
+  color: #F59E0B !important;
   transform: translateY(-50%) scale(1.25);
-  text-shadow: 0 0 20px rgba(245, 158, 11, 0.8);
+  text-shadow: 0 0 25px rgba(245, 158, 11, 0.85);
   box-shadow: none !important;
 }
 
 .hero-carousel-prev {
-  left: -40px;
+  left: 2rem;
 }
 
 .hero-carousel-next {
-  right: -40px;
-}
-
-.hero-slide-bubble-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
-  z-index: 20;
-  position: relative;
-}
-  border-radius: var(--radius-full);
-  font-size: 0.9rem;
-  font-weight: 700;
-  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
-  transition: all 0.3s ease;
+  right: 2rem;
 }
 
 .hero-carousel-dots {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+  z-index: 20;
+}
+
+.hero-carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-carousel-dot.active {
+  background: #F59E0B;
+  border-color: #FBBF24;
+  width: 28px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
   align-items: center;
   justify-content: center;
   gap: 0.65rem;
@@ -707,28 +716,28 @@ h1, h2, h3, h4 {
   letter-spacing: 0.1em;
 }
 
-/* Spine & Pages visual effect */
+/* Spine & Pages visual effect - Connected to Book Cover */
 .book-spine {
   position: absolute;
-  top: 3px;
-  bottom: 3px;
-  left: -18px;
-  width: 20px;
+  top: 1px;
+  bottom: 1px;
+  left: -14px;
+  width: 16px;
   background: linear-gradient(90deg, #090D16 0%, #1E293B 100%);
-  transform: rotateY(-90deg) translateZ(10px);
+  transform: rotateY(-90deg) translateZ(8px);
   border-radius: 3px 0 0 3px;
 }
 
 .book-pages {
   position: absolute;
-  top: 8px;
-  bottom: 8px;
-  right: -24px;
-  width: 30px;
-  background: repeating-linear-gradient(90deg, #E2E8F0, #E2E8F0 1px, #CBD5E1 1px, #CBD5E1 2px);
-  transform: rotateY(90deg) translateZ(12px);
-  border-radius: 0 4px 4px 0;
-  box-shadow: inset -4px 0 8px rgba(0, 0, 0, 0.2);
+  top: 4px;
+  bottom: 4px;
+  right: -10px;
+  width: 14px;
+  background: repeating-linear-gradient(90deg, #F1F5F9, #F1F5F9 1px, #CBD5E1 1px, #CBD5E1 2px);
+  transform: rotateY(90deg) translateZ(5px);
+  border-radius: 0 3px 3px 0;
+  box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.25);
 }
 
 /* Floating companion pill on book */

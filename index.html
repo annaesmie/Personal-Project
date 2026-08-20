@@ -63,6 +63,10 @@
        HERO SECTION (TAMARA WILLIAMS-BROWN DUAL-BOOK SPOTLIGHT SLIDER)
        ========================================================================== -->
   <section class="hero-section" id="hero">
+    <!-- Floating Side Carousel Arrows -->
+    <button type="button" class="hero-carousel-arrow hero-carousel-prev" id="hero-carousel-prev" title="Previous Book" aria-label="Previous Book">‹</button>
+    <button type="button" class="hero-carousel-arrow hero-carousel-next" id="hero-carousel-next" title="Next Book" aria-label="Next Book">›</button>
+
     <div class="container">
       <div class="hero-grid" id="hero-slide-content">
         <!-- Hero Copy -->
@@ -108,9 +112,6 @@
 
         <!-- 3D CSS Book Mockup -->
         <div class="hero-book-wrapper">
-          <button type="button" class="hero-carousel-arrow hero-carousel-prev" id="hero-carousel-prev" aria-label="Previous Book">‹</button>
-          <button type="button" class="hero-carousel-arrow hero-carousel-next" id="hero-carousel-next" aria-label="Next Book">›</button>
-
           <div class="book-glow"></div>
 
           <a href="https://www.amazon.com/dp/B0G5D23712" target="_blank" rel="noopener noreferrer" id="hero-book-3d-link">
@@ -118,7 +119,7 @@
               <div class="book-spine"></div>
               <div class="book-pages"></div>
               <div class="book-cover has-image" id="book-cover-container">
-                <img class="book-cover-img" id="book-cover-img" src="assets/cover-autism.jpg" alt="Teaching Students with Autism Cover" style="display: block;" />
+                <img class="book-cover-img" id="book-cover-img" src="assets/cover-autism.jpg" alt="Teaching Students with Autism Cover" referrerpolicy="no-referrer" style="display: block;" />
                 <div class="book-cover-top">
                   <div class="book-cover-kicker">Cognitive Pedagogy</div>
                   <div class="book-cover-title" id="cover-title-text">Teaching Students with Autism</div>
@@ -139,6 +140,9 @@
             </div>
           </a>
 
+          <!-- Slide Indicator Dots -->
+          <div class="hero-carousel-dots" id="hero-carousel-dots"></div>
+
           <!-- Interactive Companion Callout Pill -->
           <div class="floating-companion-pill" id="hero-study-pill">
             <div class="companion-icon">✓</div>
@@ -148,11 +152,6 @@
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- Centered Slide Indicator Dots -->
-      <div class="hero-slide-bubble-wrapper">
-        <div class="hero-carousel-dots" id="hero-carousel-dots"></div>
       </div>
     </div>
   </section>
