@@ -2,38 +2,38 @@
    THE MODERN LEARNER'S BLUEPRINT - DESIGN SYSTEM & STYLESHEET
    ========================================================================== */
 
-/* --- Custom CSS Variables & Tokens (Golden Brown, Dark Blue & Light Beige Theme) --- */
+/* --- Custom CSS Variables & Tokens (Midnight Plum & Vibrant Gold Theme) --- */
 :root {
-  /* Color Palette - Dark Sapphire Blue & Warm Light Beige */
-  --navy-950: #060B19;
-  --navy-900: #0A1128;
-  --navy-850: #101B3A;
-  --navy-800: #17264E;
-  --slate-700: #2C3A5A;
-  --slate-600: #3E4E73;
-  --slate-500: #576A92;
-  --slate-400: #8194BB;
-  --slate-300: #B2C1DF;
-  --slate-200: #DCE3F2;
-  --slate-100: #F2ECE1;
-  --off-white: #F9F6F0;
-  --pure-white: #FAF7F2;
+  /* Color Palette - Midnight Plum Base */
+  --navy-950: #0D0417;
+  --navy-900: #170829;
+  --navy-850: #210C3A;
+  --navy-800: #2D124F;
+  --slate-700: #3E1A68;
+  --slate-600: #55278C;
+  --slate-500: #743EB0;
+  --slate-400: #9E74D4;
+  --slate-300: #C9B2E8;
+  --slate-200: #E6DBF5;
+  --slate-100: #210C3A;
+  --off-white: #170829;
+  --pure-white: #FFFFFF;
 
-  /* Accent & Highlight Colors - Golden Brown & Warm Amber */
-  --gold-500: #C07D34;
-  --gold-600: #A26322;
-  --gold-400: #D9964A;
-  --gold-light: rgba(192, 125, 52, 0.12);
-  --gold-glow: rgba(192, 125, 52, 0.35);
+  /* Accent & Highlight Colors - Vibrant Yellow & Amber */
+  --gold-500: #F59E0B;
+  --gold-600: #D97706;
+  --gold-400: #FBBF24;
+  --gold-light: rgba(245, 158, 11, 0.12);
+  --gold-glow: rgba(245, 158, 11, 0.35);
 
   --emerald-500: #10B981;
   --emerald-600: #059669;
   --emerald-light: rgba(16, 185, 129, 0.12);
 
-  --rose-500: #C07D34;
-  --rose-light: rgba(192, 125, 52, 0.12);
-  --plum-accent: #3E4E73;
-  --sunset-amber: #D9964A;
+  --rose-500: #F59E0B;
+  --rose-light: rgba(245, 158, 11, 0.12);
+  --plum-accent: #A855F7;
+  --sunset-amber: #FBBF24;
 
   /* Typography */
   --font-serif: 'Playfair Display', Georgia, Cambria, 'Times New Roman', serif;
@@ -42,11 +42,11 @@
 
   /* Elevation & Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(10, 17, 40, 0.08), 0 2px 4px -2px rgba(10, 17, 40, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(10, 17, 40, 0.12), 0 4px 6px -4px rgba(10, 17, 40, 0.08);
-  --shadow-xl: 0 20px 25px -5px rgba(10, 17, 40, 0.16), 0 8px 10px -6px rgba(10, 17, 40, 0.1);
-  --shadow-book: -15px 25px 50px -12px rgba(6, 11, 25, 0.45), 0 10px 20px -5px rgba(0, 0, 0, 0.25);
-  --shadow-glow: 0 0 30px rgba(192, 125, 52, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(13, 4, 23, 0.12), 0 2px 4px -2px rgba(13, 4, 23, 0.08);
+  --shadow-lg: 0 10px 15px -3px rgba(13, 4, 23, 0.2), 0 4px 6px -4px rgba(13, 4, 23, 0.12);
+  --shadow-xl: 0 20px 25px -5px rgba(13, 4, 23, 0.3), 0 8px 10px -6px rgba(13, 4, 23, 0.15);
+  --shadow-book: -15px 25px 50px -12px rgba(13, 4, 23, 0.6), 0 10px 20px -5px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 30px rgba(245, 158, 11, 0.35);
 
   /* Border Radius */
   --radius-sm: 8px;
@@ -75,8 +75,8 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--off-white);
-  color: var(--slate-700);
+  background-color: var(--navy-900);
+  color: var(--slate-300);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -100,13 +100,11 @@ body {
 }
 
 .section-dark {
-  background-color: var(--navy-900);
-  color: var(--slate-200);
+  background-color: var(--navy-950);
 }
 
 .section-slate {
   background-color: var(--navy-850);
-  color: var(--slate-200);
 }
 
 .section-muted {
@@ -115,7 +113,7 @@ body {
 
 /* Typography Helpers */
 h1, h2, h3, h4 {
-  color: var(--navy-900);
+  color: var(--pure-white);
   font-weight: 700;
   line-height: 1.25;
 }
@@ -155,16 +153,17 @@ h1, h2, h3, h4 {
   font-family: var(--font-serif);
   font-size: 2.35rem;
   margin-bottom: 1rem;
+  color: var(--pure-white);
 }
 
 .section-subtitle {
   font-size: 1.125rem;
-  color: var(--slate-500);
+  color: var(--slate-300);
 }
 
 .section-dark .section-subtitle,
 .section-slate .section-subtitle {
-  color: var(--slate-400);
+  color: var(--slate-300);
 }
 
 /* Buttons */
@@ -175,25 +174,27 @@ h1, h2, h3, h4 {
   gap: 0.6rem;
   padding: 0.85rem 1.65rem;
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
   font-family: var(--font-sans);
   border-radius: var(--radius-md);
   text-decoration: none;
   cursor: pointer;
   transition: all var(--transition-normal);
-  border: 1px solid transparent;
 }
 
 .btn-primary {
-  background-color: var(--gold-500);
-  color: var(--navy-950);
-  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+  background-color: #FFFFFF !important;
+  border: 2px solid #F59E0B !important;
+  color: #170829 !important;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.3);
 }
 
 .btn-primary:hover {
-  background-color: var(--gold-400);
+  background-color: #FFFBEB !important;
+  border-color: #D97706 !important;
+  color: #170829 !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.45);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
 }
 
 .btn-secondary {
@@ -444,16 +445,80 @@ h1, h2, h3, h4 {
 .hero-book-wrapper {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   perspective: 1200px;
+}
+
+.hero-carousel-arrow {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid #F59E0B;
+  color: #170829;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease;
+}
+
+.hero-carousel-arrow:hover {
+  background: #FFFBEB;
+  border-color: #D97706;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+}
+
+.hero-carousel-prev {
+  left: -20px;
+}
+
+.hero-carousel-next {
+  right: -20px;
+}
+
+.hero-carousel-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: 1.75rem;
+  z-index: 10;
+}
+
+.hero-carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-carousel-dot.active {
+  background: #F59E0B;
+  border-color: #FBBF24;
+  width: 28px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
 }
 
 .book-glow {
   position: absolute;
   width: 340px;
   height: 440px;
-  background: radial-gradient(circle, rgba(192, 125, 52, 0.28) 0%, rgba(23, 38, 78, 0.2) 45%, rgba(6, 11, 25, 0) 75%);
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.28) 0%, rgba(168, 85, 247, 0.18) 45%, rgba(13, 4, 23, 0) 75%);
   filter: blur(45px);
   z-index: 1;
 }
@@ -465,8 +530,18 @@ h1, h2, h3, h4 {
   z-index: 2;
   transform-style: preserve-3d;
   transform: rotateY(-22deg) rotateX(10deg);
-  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s ease;
   cursor: pointer;
+}
+
+.book-3d.slide-out-left {
+  transform: translateX(-120px) rotateY(-45deg) scale(0.85);
+  opacity: 0;
+}
+
+.book-3d.slide-out-right {
+  transform: translateX(120px) rotateY(15deg) scale(0.85);
+  opacity: 0;
 }
 
 .book-3d:hover {

@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   renderSite(activeData);
 
   // 3. Initialize Interactive Components
+  initHeroBookCarousel(activeData);
   initExerciseDrawer(activeData.exercisesSidebar);
   initFaqAccordion();
   initModals();
@@ -632,4 +633,109 @@ function escapeHTML(str) {
     "'": '&#39;',
     '"': '&quot;'
   }[tag] || tag));
+}
+
+/* ==========================================================================
+   7. DUAL-BOOK HERO CAROUSEL / SLIDER LOGIC
+   ========================================================================== */
+function initHeroBookCarousel(data) {
+  const books = data.books || [data.book];
+  if (!books || books.length <= 1) return;
+
+  const prevBtn = document.getElementById('hero-carousel-prev');
+  const nextBtn = document.getElementById('hero-carousel-next');
+  const dotsContainer = document.getElementById('hero-carousel-dots');
+  const book3d = document.getElementById('hero-book-3d');
+  const book3dLink = document.getElementById('hero-book-3d-link');
+  const primaryBuyBtn = document.getElementById('hero-primary-buy-btn');
+
+  let activeIndex = 0;
+
+  // Render dots
+  if (dotsContainer) {
+    dotsContainer.innerHTML = books.map((_, idx) => `
+      <div class="hero-carousel-dot ${idx === 0 ? 'active' : ''}" data-idx="${idx}" title="View book ${idx + 1}"></div>
+    `).join('');
+
+    dotsContainer.querySelectorAll('.hero-carousel-dot').forEach(dot => {
+      dot.addEventListener('click', () => {
+        const targetIdx = parseInt(dot.getAttribute('data-idx'), 10);
+        if (targetIdx !== activeIndex) {
+          switchBook(targetIdx, targetIdx > activeIndex ? 'left' : 'right');
+        }
+      });
+    });
+  }
+
+  function switchBook(index, direction = 'left') {
+    if (!books[index]) return;
+    activeIndex = index;
+    const currentBook = books[index];
+
+    if (book3d) {
+      book3d.classList.add(direction === 'left' ? 'slide-out-left' : 'slide-out-right');
+      setTimeout(() => {
+        // Update Title & Subtitle
+        const heroTitle = document.getElementById('hero-book-title');
+        if (heroTitle) {
+          const parts = currentBook.title.split(' ');
+          const lastWord = parts.pop();
+          heroTitle.innerHTML = `${parts.join(' ')} <span>${lastWord}</span>`;
+        }
+
+        const heroSub = document.getElementById('hero-book-subtitle');
+        if (heroSub) heroSub.textContent = currentBook.subtitle;
+
+        const heroBadge = document.getElementById('hero-badge-text');
+        if (heroBadge && currentBook.badgeText) {
+          heroBadge.innerHTML = `${currentBook.badgeText}`;
+        }
+
+        const pricePaperback = document.getElementById('price-paperback');
+        if (pricePaperback && currentBook.pricing) pricePaperback.textContent = currentBook.pricing.paperback || '$19.99';
+
+        const priceEbook = document.getElementById('price-ebook');
+        if (priceEbook && currentBook.pricing) priceEbook.textContent = currentBook.pricing.ebook || '$9.99';
+
+        const coverImg = document.getElementById('book-cover-img');
+        const coverContainer = document.getElementById('book-cover-container');
+        if (coverImg && currentBook.coverImage) {
+          coverImg.src = currentBook.coverImage;
+          coverImg.alt = currentBook.title;
+          coverImg.style.display = 'block';
+          if (coverContainer) coverContainer.classList.add('has-image');
+        }
+
+        if (primaryBuyBtn && currentBook.amazonUrl) {
+          primaryBuyBtn.href = currentBook.amazonUrl;
+        }
+
+        if (book3dLink && currentBook.amazonUrl) {
+          book3dLink.href = currentBook.amazonUrl;
+        }
+
+        book3d.classList.remove('slide-out-left', 'slide-out-right');
+      }, 300);
+    }
+
+    if (dotsContainer) {
+      dotsContainer.querySelectorAll('.hero-carousel-dot').forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === activeIndex);
+      });
+    }
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      const nextIndex = (activeIndex - 1 + books.length) % books.length;
+      switchBook(nextIndex, 'right');
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      const nextIndex = (activeIndex + 1) % books.length;
+      switchBook(nextIndex, 'left');
+    });
+  }
 }

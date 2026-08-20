@@ -35,15 +35,43 @@ const BOOK_CONFIG = {
   },
 
   // ---------------------------------------------------------------------------------------
-  // 3. BOOK DETAILS & PURCHASE INFORMATION
+  // 3. BOOKS & PURCHASE INFORMATION (TAMARA WILLIAMS-BROWN)
   // ---------------------------------------------------------------------------------------
+  books: [
+    {
+      id: "autism-book",
+      title: "Teaching Students with Autism",
+      subtitle: "Practical Strategies for Neurodiverse Learning, Cognitive Growth & Inclusive Classrooms",
+      tag: "Paperback • Kindle eBook",
+      coverImage: "https://m.media-amazon.com/images/I/61Wda4havWL._SL1293_.jpg",
+      amazonUrl: "https://www.amazon.com/dp/B0G5D23712",
+      badgeText: "🏆 #1 Essential Guide for Inclusive Educators",
+      pricing: {
+        paperback: "$19.99",
+        ebook: "$9.99"
+      }
+    },
+    {
+      id: "classroom-strategies-book",
+      title: "Practical Classroom Strategies for Inclusion",
+      subtitle: "Actionable Adaptation Worksheets, Behavioral Toolkits & Differentiated Instruction Methods",
+      tag: "Paperback • Kindle eBook",
+      coverImage: "https://m.media-amazon.com/images/I/61cxDj2WDzL._SL1500_.jpg",
+      amazonUrl: "https://www.amazon.com/dp/B0HFCXH61C",
+      badgeText: "✨ Companion Workbook & Field Guide",
+      pricing: {
+        paperback: "$18.99",
+        ebook: "$8.99"
+      }
+    }
+  ],
+
   book: {
     title: "Teaching Students with Autism",
     subtitle: "Practical Strategies for Neurodiverse Learning, Cognitive Growth & Inclusive Classrooms",
-    tag: "Hardcover • Paperback • eBook • Audiobook",
-    coverImage: "https://m.media-amazon.com/images/I/61Wda4havWL._SL1293_.jpg", // Amazon Live Book Cover
+    tag: "Paperback • Kindle eBook",
+    coverImage: "https://m.media-amazon.com/images/I/61Wda4havWL._SL1293_.jpg",
     pricing: {
-      hardcover: "$27.99",
       paperback: "$19.99",
       ebook: "$9.99"
     },
@@ -53,24 +81,6 @@ const BOOK_CONFIG = {
         icon: "shopping-bag",
         url: "https://www.amazon.com/dp/B0G5D23712",
         badge: "Available on Amazon (Prime)"
-      },
-      {
-        name: "Barnes & Noble",
-        icon: "book",
-        url: "https://barnesandnoble.com",
-        badge: "Member Discount"
-      },
-      {
-        name: "Bookshop.org",
-        icon: "heart",
-        url: "https://bookshop.org",
-        badge: "Supports Local Bookstores"
-      },
-      {
-        name: "Direct Signed Copy",
-        icon: "award",
-        url: "#buy-direct",
-        badge: "Includes Author Note"
       }
     ]
   },
