@@ -43,7 +43,7 @@ const BOOK_CONFIG = {
       title: "Teaching Students with Autism: Learning on the Spectrum",
       subtitle: "Practical Strategies for Neurodiverse Learning, Cognitive Growth & Inclusive Classrooms",
       tag: "Paperback • Kindle eBook",
-      coverImage: "https://m.media-amazon.com/images/I/61Wda4havWL._SL1293_.jpg",
+      coverImage: "assets/cover-autism.jpg",
       amazonUrl: "https://www.amazon.com/dp/B0G5D23712",
       badgeText: "🏆 #1 Essential Guide for Inclusive Educators",
       pricing: {
@@ -56,7 +56,7 @@ const BOOK_CONFIG = {
       title: "Practical Classroom Strategies for Inclusion",
       subtitle: "Actionable Adaptation Worksheets, Behavioral Toolkits & Differentiated Instruction Methods",
       tag: "Paperback • Kindle eBook",
-      coverImage: "https://m.media-amazon.com/images/I/61cxDj2WDzL._SL1500_.jpg",
+      coverImage: "assets/cover-inclusion.jpg",
       amazonUrl: "https://www.amazon.com/dp/B0HFCXH61C",
       badgeText: "✨ Companion Workbook & Field Guide",
       pricing: {
@@ -70,7 +70,7 @@ const BOOK_CONFIG = {
     title: "Teaching Students with Autism: Learning on the Spectrum",
     subtitle: "Practical Strategies for Neurodiverse Learning, Cognitive Growth & Inclusive Classrooms",
     tag: "Paperback • Kindle eBook",
-    coverImage: "https://m.media-amazon.com/images/I/61Wda4havWL._SL1293_.jpg",
+    coverImage: "assets/cover-autism.jpg",
     pricing: {
       paperback: "$19.99",
       ebook: "$9.99"
@@ -90,23 +90,26 @@ const BOOK_CONFIG = {
   // ---------------------------------------------------------------------------------------
   problemStatement: {
     badge: "The Challenge",
-    heading: "Why Traditional Classrooms Are Falling Behind the Modern Mind",
-    subheading: "Students are flooded with stimulation outside school, yet subjected to passive lecture models inside. The result? Record disengagement and cognitive fatigue.",
+    heading: "Why Traditional Classrooms Need Individualized Inclusive Strategies",
+    subheading: "Neurodivergent learners and students with Autism Spectrum Disorder (ASD) thrive when given structured, data-driven, and compassionate support.",
     pillars: [
       {
         icon: "⚡",
-        title: "The Attention Fragmentation Crisis",
-        description: "Modern learners switch tasks every 47 seconds. Traditional monologue teaching fails to hold cognitive bandwidth."
+        title: "Individualized Support (IEP Excellence)",
+        description: "Adapting general education curriculum (Math, Science, Literacy) for varied exceptionalities with measurable data progress."
       },
       {
         icon: "🧩",
-        title: "Passive Ingestion vs. Active Construction",
-        description: "Rote memorization yields less than 20% 30-day retention. Learners need exploratory frameworks, not passive slides."
+        title: "Sensory & Behavioral Integration",
+        description: "Devising multi-sensory and technology-integrated routines that maintain high focus, self-regulation, and dignity."
       },
       {
         icon: "🎯",
-        title: "The Transfer Dilemma",
-        description: "Students ace standardized tests yet struggle to apply conceptual reasoning in novel, real-world cont    quote: "“Inclusion is not a checklist; it is an environment where every learner thrives.”"
+        title: "Parent & Community Trust",
+        description: "Maintaining proactive, transparent communication with families to align home and school support strategies."
+      }
+    ],
+    quote: "“Inclusion is not a checklist; it is an environment where every learner possesses the potential to thrive.”"
   },
 
   // ---------------------------------------------------------------------------------------
@@ -116,19 +119,19 @@ const BOOK_CONFIG = {
     badge: "About The Books",
     heading: "Actionable Playbooks for Inclusive & Neurodiverse Classrooms",
     descriptionParagraphs: [
-      "In <em>Teaching Students with Autism</em> and <em>Practical Classroom Strategies for Inclusion</em>, specialist and author Tamara Williams-Brown bridges cognitive research with practical, battle-tested classroom methods.",
-      "Whether you teach elementary students, lead special education, or manage instructional design, these guides unpack actionable systems to cultivate belonging, regulate cognitive load, and empower every learner."
+      "In <em>Teaching Students with Autism: Learning on the Spectrum</em> and <em>Practical Classroom Strategies for Inclusion</em>, specialist and author Tamara Williams-Brown bridges cognitive research with practical, battle-tested classroom methods.",
+      "Drawing on over two decades of classroom leadership since 2002, her work unpacks actionable systems to cultivate belonging, regulate cognitive load, and empower every learner."
     ],
     keyTakeaways: [
-      "Strength-based scaffolding models for neurodiverse learners",
-      "Strategies for regulating sensory environments and reducing cognitive fatigue",
-      "Designing individualized communication channels and flexible pacing",
-      "Practical collaboration frameworks for teachers, parents, and specialists"
+      "Individualized IEP Development & Data-Driven Student Progress Tracking",
+      "5E Instructional Model & Differentiated Multi-Sensory Pedagogy",
+      "Autism Spectrum Disorder (ASD) Classroom Management & Crisis Intervention",
+      "Proactive Parent-Teacher Collaboration & School Leadership Strategies"
     ],
     chapters: [
       {
         number: "01",
-        title: "Understanding Neurodiversity",
+        title: "Understanding Neurodiversity & ASD",
         summary: "Moving beyond deficit models to embrace authentic neurodiverse strengths."
       },
       {
@@ -155,16 +158,16 @@ const BOOK_CONFIG = {
   author: {
     badge: "Meet The Author",
     name: "Tamara Williams-Brown",
-    title: "Specialist in Neurodiverse Education & Author",
+    title: "General & Exceptional Student Education (ESE) Specialist | B.S.Ed, DipEd (M.Ed Cand.)",
     bio: [
-      "Tamara Williams-Brown is an educator, speaker, and neurodiversity specialist dedicated to transforming inclusive classroom practices.",
-      "With years of hands-on experience coaching teachers and supporting neurodivergent students, her work centers on practical, dignity-first instructional adaptations."
+      "Tamara Williams-Brown is a veteran General and Special Education Specialist with over two decades of classroom leadership since 2002. Holding a Bachelor of Science in Education from Western Carolina University and currently pursuing her Master's degree, her career is defined by a stalwart commitment to empowering neurodivergent learners and students on the Autism Spectrum.",
+      "Recognized with exceptional administrative feedback from Principals and ESE Directors, Tamara specializes in Individualized Education Program (IEP) development, sensory integration, and 5E differentiated pedagogy that bridges academic rigor with deep compassionate support."
     ],
     credentials: [
-      { label: "Educators Trained", value: "1,200+" },
-      { label: "Years Experience", value: "15+ Years" },
-      { label: "Keynotes & Workshops", value: "85+ Events" },
-      { label: "Educator Rating", value: "4.9/5" }
+      { label: "Teaching Tenure", value: "24+ Years (Since 2002)" },
+      { label: "Education & Degrees", value: "B.S.Ed (WCU) & DipEd" },
+      { label: "Specialties", value: "ASD Support & IEP Excellence" },
+      { label: "Admin Rating", value: "Consistently Exceptional" }
     ],
     photo: "assets/author-portrait.jpg"
   },

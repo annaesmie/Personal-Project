@@ -472,17 +472,19 @@ h1, h2, h3, h4 {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
   background: transparent !important;
   border: none !important;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.88);
   font-size: 3.5rem;
   font-weight: 300;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 30;
-  padding: 0.5rem;
+  z-index: 100;
+  pointer-events: auto;
   box-shadow: none !important;
   transition: all 0.25s ease;
   user-select: none;
@@ -491,8 +493,8 @@ h1, h2, h3, h4 {
 .hero-carousel-arrow:hover {
   background: transparent !important;
   color: #F59E0B;
-  transform: translateY(-50%) scale(1.2);
-  text-shadow: 0 0 16px rgba(245, 158, 11, 0.6);
+  transform: translateY(-50%) scale(1.25);
+  text-shadow: 0 0 20px rgba(245, 158, 11, 0.8);
   box-shadow: none !important;
 }
 

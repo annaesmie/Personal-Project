@@ -741,6 +741,24 @@ function initHeroBookCarousel(data) {
     }
   }
 
+  // Global click delegation for hero carousel arrows
+  document.addEventListener('click', (e) => {
+    const prevTarget = e.target.closest('#hero-carousel-prev');
+    const nextTarget = e.target.closest('#hero-carousel-next');
+
+    if (prevTarget) {
+      e.preventDefault();
+      e.stopPropagation();
+      const nextIndex = (activeIndex - 1 + books.length) % books.length;
+      switchBook(nextIndex, 'right');
+    } else if (nextTarget) {
+      e.preventDefault();
+      e.stopPropagation();
+      const nextIndex = (activeIndex + 1) % books.length;
+      switchBook(nextIndex, 'left');
+    }
+  });
+
   if (prevBtn) {
     prevBtn.addEventListener('click', (e) => {
       e.preventDefault();
