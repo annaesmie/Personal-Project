@@ -68,13 +68,32 @@ function renderSite(data) {
     const heroSub = document.getElementById('hero-book-subtitle');
     if (heroSub) heroSub.textContent = data.book.subtitle;
 
-    // 3D Cover text
+    // 3D Cover rendering (Image with fallback)
+    const coverContainer = document.getElementById('book-cover-container');
+    const coverImg = document.getElementById('book-cover-img');
     const coverTitle = document.getElementById('cover-title-text');
-    if (coverTitle) coverTitle.textContent = data.book.title;
     const coverSub = document.getElementById('cover-sub-text');
-    if (coverSub) coverSub.textContent = data.book.subtitle;
     const coverAuthor = document.getElementById('cover-author-name');
-    if (coverAuthor) coverAuthor.textContent = data.author.name;
+
+    if (data.book.coverImage && coverImg && coverContainer) {
+      coverImg.src = data.book.coverImage;
+      coverImg.alt = data.book.title || 'Book Cover';
+      coverImg.onload = () => {
+        coverImg.style.display = 'block';
+        coverContainer.classList.add('has-image');
+      };
+      coverImg.onerror = () => {
+        coverImg.style.display = 'none';
+        coverContainer.classList.remove('has-image');
+      };
+    } else if (coverImg && coverContainer) {
+      coverImg.style.display = 'none';
+      coverContainer.classList.remove('has-image');
+    }
+
+    if (coverTitle) coverTitle.textContent = data.book.title;
+    if (coverSub) coverSub.textContent = data.book.subtitle;
+    if (coverAuthor) coverAuthor.textContent = (data.author && data.author.name) || '';
 
     // Pricing
     if (data.book.pricing) {
